@@ -50,7 +50,7 @@ public class CustomContactAdapter extends BaseAdapter {
 
         Contact listViewItem = contactViewItemList.get(position);
 
-        Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, Long.valueOf(listViewItem.getContactId()));
+        Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, Long.valueOf(listViewItem.getContactID()));
         InputStream photo_stream = ContactsContract.Contacts.openContactPhotoInputStream(context.getContentResolver(), contactUri, true);
 //        Log.e("name", listViewItem.getName());
 //        Log.i("photoId", String.valueOf(listViewItem.getPhotoId()));
@@ -85,7 +85,7 @@ public class CustomContactAdapter extends BaseAdapter {
 //        item.setProfilePicture(profilePicture);
         item.setName(name);
         item.setPhoneNumber(phoneNumber);
-        item.setContactId(contactId);
+        item.setContactID(contactId);
 //        item.setPhotoId(pho1oId);
 
         contactViewItemList.add(item);
