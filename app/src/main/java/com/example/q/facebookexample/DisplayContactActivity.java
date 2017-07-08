@@ -150,9 +150,12 @@ public class DisplayContactActivity extends AppCompatActivity {
     }
 
 
+    public void touchedForKeyboardHiding(View view) {
+        hideKeyboard();
+    }
+
     // 누르면 전화하기
     public void callWithNumber(View view) {
-        hideKeyboard();
 //
 //        TextView phoneNumberTextView = (TextView) view.findViewById(R.id.phoneNumber);
 //        String phoneNumber = String.valueOf(phoneNumberTextView.getText());
@@ -238,14 +241,14 @@ public class DisplayContactActivity extends AppCompatActivity {
 //                Log.i("checkDifference", String.valueOf(contactList.get(i).equals(serverContactList.get(j))));
 //                Log.i("checkDifference", String.valueOf(contactList.get(i).getContactID().equals(serverContactList.get(j).getContactID())));
                 if (contactList.get(i).equals(serverContactList.get(j))) { // same contact in phone and server
-                    Log.i("checkDifference", "same contact");
+//                    Log.i("checkDifference", "same contact");
                     deleteContactCheckList.set(j, false);
                     thereIsIt = true;
                     break;
                 }
                 else if (contactList.get(i).getContactID().equals(serverContactList.get(j).getContactID())) {  // something difference, sync by PUT
 //                    Log.i("checkDifference", serverContactList.get(j).getContactID());
-                    Log.i("checkDifference", "same contact id but differnce exist");
+//                    Log.i("checkDifference", "same contact id but differnce exist");
                     deleteContactCheckList.set(j, false);
                     putContactList.add(contactList.get(i));
                     thereIsIt = true;
@@ -301,7 +304,7 @@ public class DisplayContactActivity extends AppCompatActivity {
     }
 
     public void postServerDB(String userID, ArrayList<Contact> postContactList) {
-        Log.i("postServerDB", "start api call" + String.valueOf(postContactList.size()));
+        Log.i("postServerDB", "start api call : " + String.valueOf(postContactList.size()));
         OkHttpClient client = new OkHttpClient();
         Log.i("postServerDB", "open client");
         HttpUrl url = new HttpUrl.Builder()
@@ -335,7 +338,7 @@ public class DisplayContactActivity extends AppCompatActivity {
     }
 
     public void putServerDB(String userID, ArrayList<Contact> putContactList) {
-        Log.i("putServerDB", "start api call" + String.valueOf(putContactList.size()));
+        Log.i("putServerDB", "start api call : " + String.valueOf(putContactList.size()));
         OkHttpClient client = new OkHttpClient();
         Log.i("putServerDB", "open client");
         HttpUrl url = new HttpUrl.Builder()
@@ -369,7 +372,7 @@ public class DisplayContactActivity extends AppCompatActivity {
     }
 
     public void deleteServerDB(String userID, ArrayList<String> deleteContactIDList) {
-        Log.i("deleteServerDB", "start api call" + String.valueOf(deleteContactIDList.size()));
+        Log.i("deleteServerDB", "start api call : " + String.valueOf(deleteContactIDList.size()));
         OkHttpClient client = new OkHttpClient();
         Log.i("deleteServerDB", "open client");
         HttpUrl url = new HttpUrl.Builder()

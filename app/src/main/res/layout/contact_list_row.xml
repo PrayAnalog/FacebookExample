@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:padding="3dp">
+    android:padding="3dp"
+    android:onClick="touchedForKeyboardHiding" >
 
     <ImageView
         android:id="@+id/contactPhotoImageView"
