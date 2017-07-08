@@ -44,7 +44,6 @@ public class CustomContactAdapter extends BaseAdapter {
         }
 
         ImageView profileImageView = (ImageView) convertView.findViewById(R.id.contactPhotoImageView);
-
         TextView nameTextView = (TextView) convertView.findViewById(R.id.contactNameTextView);
         TextView phoneNumberTextView = (TextView) convertView.findViewById(R.id.contactPhoneNumberTextView);
 
@@ -52,17 +51,7 @@ public class CustomContactAdapter extends BaseAdapter {
 
         Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, Long.valueOf(listViewItem.getContactID()));
         InputStream photo_stream = ContactsContract.Contacts.openContactPhotoInputStream(context.getContentResolver(), contactUri, true);
-//        Log.e("name", listViewItem.getName());
-//        Log.i("photoId", String.valueOf(listViewItem.getPhotoId()));
-//        Log.i("contactId", String.valueOf(listViewItem.getContactId()));
-//        Log.i("long contactId", String.valueOf(Long.valueOf(listViewItem.getContactId())));
-//        Log.i("photo_stream", String.valueOf(photo_stream==null));
         profileImageView.setImageBitmap(BitmapFactory.decodeStream(photo_stream));
-//        if (photo_stream != null)
-//            profileImageView.setImageBitmap(BitmapFactory.decodeStream(photo_stream));
-//        else
-//            profileImageView.setImageResource(R.drawable.);
-
 
         nameTextView.setText(listViewItem.getName());
         phoneNumberTextView.setText(listViewItem.getPhoneNumber());
@@ -80,12 +69,13 @@ public class CustomContactAdapter extends BaseAdapter {
         return contactViewItemList.get(position) ;
     }
 
-    public void addItem(String name, String phoneNumber, String contactId) {
+    public void addItem(String name, String phoneNumber, String contactID, String ID) {
         Contact item = new Contact();
 //        item.setProfilePicture(profilePicture);
         item.setName(name);
         item.setPhoneNumber(phoneNumber);
-        item.setContactID(contactId);
+        item.setContactID(contactID);
+        item.setID(ID);
 //        item.setPhotoId(pho1oId);
 
         contactViewItemList.add(item);

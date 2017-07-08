@@ -2,7 +2,9 @@ package com.example.q.facebookexample;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -15,7 +17,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -81,9 +85,10 @@ public class DisplayContactActivity extends AppCompatActivity {
             if (searchKeyword != null && !stringStartsContainsKeyword(name, searchKeyword))
                 continue;
             String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-            String contactId = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone._ID));
+            String contactID = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.CONTACT_ID));
+            String ID = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone._ID));
 
-            adapter.addItem(name, phoneNumber, contactId);
+            adapter.addItem(name, phoneNumber, contactID, ID);
         }
 
         phones.close();
@@ -156,10 +161,10 @@ public class DisplayContactActivity extends AppCompatActivity {
 
     // 누르면 전화하기
     public void callWithNumber(View view) {
-//
-//        TextView phoneNumberTextView = (TextView) view.findViewById(R.id.phoneNumber);
-//        String phoneNumber = String.valueOf(phoneNumberTextView.getText());
-//        startActivity(new Intent("android.intent.action.CALL", Uri.parse("tel:" + phoneNumber)));
+        TextView phoneNumberTextView = (TextView) ((LinearLayout) view.getParent()).findViewById(R.id.contactPhoneNumberTextView);
+        String phoneNumber = String.valueOf(phoneNumberTextView.getText());
+        Log.i("callWithNumber", phoneNumber);
+        startActivity(new Intent("android.intent.action.CALL", Uri.parse("tel:" + phoneNumber)));
     }
 
     public ArrayList<Contact> jsonToList(String body) {
@@ -171,7 +176,7 @@ public class DisplayContactActivity extends AppCompatActivity {
             for(int i = 0 ; i < items.length() ; i++) {
                 JSONObject item = (JSONObject) items.get(i);
                 Contact newContact = new Contact();
-                newContact.setContactID(item.getString("contactID"));
+                newContact.setID(item.getString("contactID"));
                 newContact.setPhoneNumber(item.getString("phoneNum"));
 //                newContact.setEmail(item.getString("email"));
                 newContact.setName(item.getString("name"));
@@ -190,7 +195,6 @@ public class DisplayContactActivity extends AppCompatActivity {
 
 
     public ArrayList<Contact> getServerDB(String userID) {
-
         Log.i("getServerDB", "start api call");
         OkHttpClient client = new OkHttpClient();
         Log.i("getServerDB", "open client");
@@ -246,7 +250,7 @@ public class DisplayContactActivity extends AppCompatActivity {
                     thereIsIt = true;
                     break;
                 }
-                else if (contactList.get(i).getContactID().equals(serverContactList.get(j).getContactID())) {  // something difference, sync by PUT
+                else if (contactList.get(i).getID().equals(serverContactList.get(j).getID())) {  // something difference, sync by PUT
 //                    Log.i("checkDifference", serverContactList.get(j).getContactID());
 //                    Log.i("checkDifference", "same contact id but differnce exist");
                     deleteContactCheckList.set(j, false);
@@ -263,7 +267,7 @@ public class DisplayContactActivity extends AppCompatActivity {
         for(int j = 0 ; j < serverContactList.size() ; j++) {
             if (deleteContactCheckList.get(j)) {
 //                Log.i("checkDifference", serverContactList.get(j).getContactID());
-                deleteContactIDList.add(serverContactList.get(j).getContactID());
+                deleteContactIDList.add(serverContactList.get(j).getID());
             }
         }
     }
@@ -274,7 +278,7 @@ public class DisplayContactActivity extends AppCompatActivity {
             JSONArray jArray = new JSONArray();
             for (Contact contact : contactList) {
                 JSONObject contactJson = new JSONObject();
-                contactJson.put("contactID", contact.getContactID());
+                contactJson.put("contactID", contact.getID());
                 contactJson.put("name", contact.getName());
                 contactJson.put("phoneNum", contact.getPhoneNumber());
 //                contactJson.put("email", contact.getEmail());
@@ -291,9 +295,9 @@ public class DisplayContactActivity extends AppCompatActivity {
 //        JSONObject jObject = new JSONObject();
         try {
             JSONArray jArray = new JSONArray();
-            for (String contactID : contactIDList) {
+            for (String ID : contactIDList) {
                 JSONObject contactJson = new JSONObject();
-                contactJson.put("contactID", contactID);
+                contactJson.put("contactID", ID);
                 jArray.put(contactJson);
             }
             return jArray;
@@ -416,8 +420,8 @@ public class DisplayContactActivity extends AppCompatActivity {
             public void run() {
                 try {
                     // get user id
-                    String userID = AccessToken.getCurrentAccessToken().toString();
-                    userID = "krista";
+                    String userID = AccessToken.getCurrentAccessToken().getUserId().toString();
+//                    userID = "krista";
 
                     // get server DB
                     ArrayList<Contact> serverContactList = getServerDB(userID);

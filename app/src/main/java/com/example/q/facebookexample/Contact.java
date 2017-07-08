@@ -10,6 +10,7 @@ public class Contact {
     private String name;
     private String phoneNumber;
     private String contactID;
+    private String ID;
 
     public void setName(String name) {
         this.name = name;
@@ -18,6 +19,7 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
     public void setContactID(String contactID) { this.contactID = contactID; }
+    public void setID(String ID) { this.ID = ID; }
 
     public String getName() {
         return this.name;
@@ -28,8 +30,10 @@ public class Contact {
     public String getContactID() {
         return this.contactID;
     }
+    public String getID() { return this.ID; }
 
     public void printContactContent() {
+        Log.i("Contact", this.ID);
         Log.i("Contact", this.contactID);
         Log.i("Contact", this.name);
         Log.i("Contact", this.phoneNumber);
@@ -38,6 +42,6 @@ public class Contact {
 //    @Override
     public boolean equals(Contact contact) {
 //        return getContactID().equals(contact.getContactID()) && getName().equals(contact.getName());
-        return getName().equals(contact.getName()) && this.phoneNumber.equals(contact.getPhoneNumber()) && this.contactID.equals(contact.getContactID());
+        return getName().equals(contact.getName()) && this.phoneNumber.equals(contact.getPhoneNumber()) && this.ID.equals(contact.getID());
     }
 }
