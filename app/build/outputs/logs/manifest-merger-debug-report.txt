@@ -35,6 +35,7 @@ ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\Android
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:9:22-78
 application
 ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:11:5-36:19
+MERGED from [com.github.chrisbanes.photoview:library:1.2.3] C:\Users\q\.android\build-cache\fed02e14b6a64a12cc039689faa6c10eb7d59a95\output\AndroidManifest.xml:4:5-81
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\q\.android\build-cache\344737806e6a691d5b813d7c37da2091e5a24ef9\output\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:28:5-48:19
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\q\.android\build-cache\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\output\AndroidManifest.xml:29:5-20
@@ -52,6 +53,8 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\q\.android\buil
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:14:9-41
 	android:supportsRtl
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:16:9-35
+	android:hardwareAccelerated
+		ADDED from [com.github.chrisbanes.photoview:library:1.2.3] C:\Users\q\.android\build-cache\fed02e14b6a64a12cc039689faa6c10eb7d59a95\output\AndroidManifest.xml:4:45-79
 	android:roundIcon
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:15:9-54
 	android:allowBackup
@@ -106,6 +109,7 @@ ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\Android
 uses-sdk
 INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\q\.android\build-cache\3690320d08eca09735a53a7d8d35bd56bd7c4b16\output\AndroidManifest.xml:20:5-43
+MERGED from [com.github.chrisbanes.photoview:library:1.2.3] C:\Users\q\.android\build-cache\fed02e14b6a64a12cc039689faa6c10eb7d59a95\output\AndroidManifest.xml:2:5-72
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\q\.android\build-cache\344737806e6a691d5b813d7c37da2091e5a24ef9\output\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:24:5-26:41
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\q\.android\build-cache\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\output\AndroidManifest.xml:21:5-23:78

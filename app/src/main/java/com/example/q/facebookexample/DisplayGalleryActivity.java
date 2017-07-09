@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
@@ -41,7 +42,29 @@ public class DisplayGalleryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_gallery);
         getPictures();
+
+        GridView pictureGridView = (GridView) findViewById(R.id.gridView1);
+
+        final Intent intent = new Intent(this, DisplayPictureDetailActivity.class);
+        pictureGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                intent.putExtra("photoID", ((Picture) adapter.getItem(position)).getPhotoID());
+                intent.putExtra("photoDir", ((Picture) adapter.getItem(position)).getPhotoDir());
+                startActivity(intent);
+            }
+        });
     }
+
+//
+//    public void showPictureDetail(View view){
+//
+//        view.getVerticalScrollbarPosition()
+//        String pictureDir = "";
+//        Log.i("showPictureDetail", pictureDir);
+//        startActivity(intent);
+//    }
+
 
     public void nothingNoticeGalleryTextViewGone() {
         TextView nothingNoticeGalleryTextView = (TextView) findViewById(R.id.nothingNoticeGalleryTextView);
@@ -69,6 +92,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
             for(int i = 0 ; i < items.length() ; i++) {
                 JSONObject item = (JSONObject) items.get(i);
                 Picture newPicture = new Picture();
+                newPicture.setPhotoID(item.getString("_id"));
                 newPicture.setPhotoDir(scheme + "://" + host + ":" + String.valueOf(port) + item.getString("photoDir"));
                 newPicture.setPhotoName(item.getString("photoName"));
                 newPicture.setThumbnailDir(scheme + "://" + host + ":" + String.valueOf(port) + item.getString("thumbDir"));
@@ -216,12 +240,6 @@ public class DisplayGalleryActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    public void showPictureDetail(View view){
-        Intent intent = new Intent(this, DisplayPictureDetailActivity.class);
-        Picture picture = new Picture();
-        startActivity(intent);
     }
 
 }

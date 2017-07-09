@@ -30,6 +30,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\q\.android\build-cache\fed02e14b6a64a12cc039689faa6c10eb7d59a95\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="81aa0e8e77d948204aa6754019c6f3c04dd922e3">
+        <dex dex="C:\Users\q\AndroidStudioProjects\FacebookExample\app\build\intermediates\pre-dexed\debug\classes_5881d0bf206e24a0ddb9fc6d8448422a22fb0291.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\q\.android\build-cache\dae347e9531d4a82f3cbe1f4557b1e59d0dddd2d\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"

@@ -8,7 +8,21 @@
 
     <ImageView
         android:id="@+id/detailPictureImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/deleteImageButton"
+        android:src="@drawable/delete_image"
+        android:onClick="deleteImage"
+        android:background="@android:color/transparent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="8dp"/>
 
 </RelativeLayout>
