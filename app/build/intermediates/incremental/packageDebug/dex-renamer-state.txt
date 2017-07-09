@@ -1,4 +1,4 @@
-#Mon Jul 10 01:00:20 KST 2017
+#Mon Jul 10 02:18:30 KST 2017
 base.0=C\:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

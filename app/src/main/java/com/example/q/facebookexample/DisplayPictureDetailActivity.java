@@ -143,12 +143,8 @@ public class DisplayPictureDetailActivity extends AppCompatActivity {
                 });
         AlertDialog alert = alertDelete.create();
         alert.show();
-
-//        Alert.show("do you want to delete this?", "Confirm Delete", Alert.YES | Alert.NO, null, alertListener, null, Alert.NO);
-//        Log.i("photoID", photoID);
-//        Log.i("photoDir", photoDir);
-
-
     }
+
+
 
 }

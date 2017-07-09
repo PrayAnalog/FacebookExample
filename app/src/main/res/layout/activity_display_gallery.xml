@@ -24,7 +24,16 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:numColumns="3" >
-
     </GridView>
+
+    <ImageButton
+        android:id="@+id/taskPhotoImageButton"
+        android:src="@drawable/take_photo_image"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
