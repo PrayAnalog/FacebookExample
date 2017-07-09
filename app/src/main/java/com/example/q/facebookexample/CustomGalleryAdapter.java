@@ -70,17 +70,8 @@ public class CustomGalleryAdapter extends BaseAdapter {
         ImageView galleryImageView = (ImageView) convertView.findViewById(R.id.galleryImageView);
         galleryImageView.setLayoutParams(new LinearLayout.LayoutParams(imageSize, imageSize));
         galleryImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//        galleryImageView.galleryImageView.getWidth()
 
-//        Picasso.with(context).load(gridViewItem.getThumbnailDir()).into(galleryImageView);
-        Picasso.with(context).load(gridViewItem.getPhotoDir()).into(galleryImageView);
-//        Picasso.with(context).load("http://13.124.41.33:1234/images/dummy.jpg").into(galleryImageView);
-
-
-//        Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, Long.valueOf(gridViewItem.getPhotoCachedDir()));
-//        InputStream photo_stream = ContactsContract.Contacts.openContactPhotoInputStream(context.getContentResolver(), contactUri, true);
-//        galleryImageView.setImageBitmap(BitmapFactory.decodeStream(photo_stream));
-
+        Picasso.with(context).load(gridViewItem.getThumbnailDir()).into(galleryImageView);
 
         return convertView;
     }

@@ -40,18 +40,18 @@ public class DisplayGalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_gallery);
+        getPictures();
     }
 
     public void nothingNoticeGalleryTextViewGone() {
         TextView nothingNoticeGalleryTextView = (TextView) findViewById(R.id.nothingNoticeGalleryTextView);
         nothingNoticeGalleryTextView.setVisibility(View.GONE);
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        getPictures();
-    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//    }
 
     // display the list by global adapter
     private void displayList() {
@@ -71,7 +71,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
                 Picture newPicture = new Picture();
                 newPicture.setPhotoDir(scheme + "://" + host + ":" + String.valueOf(port) + item.getString("photoDir"));
                 newPicture.setPhotoName(item.getString("photoName"));
-//                newPicture.setThumbnailDir(item.getString("thumbDir"));
+                newPicture.setThumbnailDir(scheme + "://" + host + ":" + String.valueOf(port) + item.getString("thumbDir"));
 
                 serverPictureList.add(newPicture);
             }
@@ -219,7 +219,8 @@ public class DisplayGalleryActivity extends AppCompatActivity {
     }
 
     public void showPictureDetail(View view){
-        Intent intent = new Intent(this, DisplayGalleryActivity.class);
+        Intent intent = new Intent(this, DisplayPictureDetailActivity.class);
+        Picture picture = new Picture();
         startActivity(intent);
     }
 
