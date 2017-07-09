@@ -11,7 +11,6 @@ import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -28,16 +27,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.net.ssl.HttpsURLConnection;
 
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;
@@ -68,7 +59,7 @@ public class DisplayContactActivity extends AppCompatActivity {
     // crawling contacts.
     // combine name and phoneNumber and add the ArrayList
     // finally return the ArrayList<String>
-    public void addContacts(String searchKeyword) {
+    public void getContacts(String searchKeyword) {
         adapter = new CustomContactAdapter();
         Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
 //        if (searchKeyword == null) {
@@ -114,7 +105,7 @@ public class DisplayContactActivity extends AppCompatActivity {
 
 
 
-    // when this show up create the ContentView and call addContacts() function to collect name and phone-number
+    // when this show up create the ContentView and call getContacts() function to collect name and phone-number
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,7 +127,7 @@ public class DisplayContactActivity extends AppCompatActivity {
                     searchKeyword = null;
                 Log.i("input", String.valueOf(s));
                 Log.i("keyword", searchKeyword);
-                addContacts(searchKeyword);
+                getContacts(searchKeyword);
                 displayList();
             }
 
@@ -148,7 +139,7 @@ public class DisplayContactActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        addContacts(searchKeyword);
+        getContacts(searchKeyword);
         displayList();
         syncServerDB();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
@@ -167,12 +158,12 @@ public class DisplayContactActivity extends AppCompatActivity {
         startActivity(new Intent("android.intent.action.CALL", Uri.parse("tel:" + phoneNumber)));
     }
 
-    public ArrayList<Contact> jsonToList(String body) {
+    public ArrayList<Contact> jsonToContactList(String body) {
         ArrayList<Contact> serverContactList = new ArrayList<>();
         try {
-            Log.i("jsonToList", "parsing start");
+            Log.i("jsonToContactList", "parsing start");
             JSONArray items = new JSONArray(body);
-            Log.i("jsonToList", "body to JSONArray");
+            Log.i("jsonToContactList", "body to JSONArray");
             for(int i = 0 ; i < items.length() ; i++) {
                 JSONObject item = (JSONObject) items.get(i);
                 Contact newContact = new Contact();
@@ -184,11 +175,11 @@ public class DisplayContactActivity extends AppCompatActivity {
                 serverContactList.add(newContact);
             }
 
-            Log.i("jsonToList", "parsing finish");
+            Log.i("jsonToContactList", "parsing finish");
             return serverContactList;
 
         } catch (JSONException e) {
-            Log.e("jsonToList", e.getMessage());
+            Log.e("jsonToContactList", e.getMessage());
         }
         return null;
     }
@@ -219,7 +210,7 @@ public class DisplayContactActivity extends AppCompatActivity {
             String body = response.body().string();
             response.close();
             Log.i("getServerDB", body);
-            return jsonToList(body);
+            return jsonToContactList(body);
         } catch(Exception e) {
             Log.e("getServerDB", e.getMessage());
         }
@@ -443,8 +434,11 @@ public class DisplayContactActivity extends AppCompatActivity {
                         deleteServerDB(userID, deleteContactIDList);
 
                     // after all toast the alarm that every contact sync
-//                    Toast.makeText(this, "Every Contacts Synchronized ", Toast.LENGTH_SHORT).show();
-
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "Every Contacts Synchronized ", Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
 
                 } catch (Exception e) {

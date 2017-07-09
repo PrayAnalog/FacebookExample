@@ -11,8 +11,8 @@
     <TextView
         android:id="@+id/loginNoticeTextView"
         android:text="Please Login Facebook"
-        android:textSize="35sp"
-        android:layout_marginBottom="72dp"
+        android:textSize="25sp"
+        android:layout_marginBottom="39dp"
         android:layout_above="@+id/facebookLoginButton"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
