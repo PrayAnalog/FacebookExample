@@ -405,7 +405,6 @@ public class DisplayContactActivity extends AppCompatActivity {
         Log.i("Sync", "syncServerDB start");
         // current phone's DS contact list
 
-
         AsyncTask.execute(new Runnable() {
 //        runOnUiThread(new Runnable() {
             @Override

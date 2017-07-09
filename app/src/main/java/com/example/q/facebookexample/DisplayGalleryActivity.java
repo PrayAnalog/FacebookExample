@@ -93,9 +93,11 @@ public class DisplayGalleryActivity extends AppCompatActivity {
                 JSONObject item = (JSONObject) items.get(i);
                 Picture newPicture = new Picture();
                 newPicture.setPhotoID(item.getString("_id"));
-                newPicture.setPhotoDir(scheme + "://" + host + ":" + String.valueOf(port) + item.getString("photoDir"));
+                newPicture.setPhotoDir(scheme + "://" + host + ":" + String.valueOf(port) + "/" + item.getString("photoDir"));
                 newPicture.setPhotoName(item.getString("photoName"));
-                newPicture.setThumbnailDir(scheme + "://" + host + ":" + String.valueOf(port) + item.getString("thumbDir"));
+                if (!item.has("thumbDir"))
+                    continue;
+                newPicture.setThumbnailDir(scheme + "://" + host + ":" + String.valueOf(port) + "/" + item.getString("thumbDir"));
 
                 serverPictureList.add(newPicture);
             }
@@ -118,7 +120,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
                 .scheme(scheme)
                 .host(host)
                 .port(port)
-                .encodedPath("/api/photo/" + userID)
+                .encodedPath("/api/photos/" + userID)
                 .build();
 
         Log.i("getServerDB", url.toString());
@@ -173,7 +175,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
                 .scheme(scheme)
                 .host(host)
                 .port(port)
-                .encodedPath("/api/photo/" + userID)
+                .encodedPath("/api/photos/" + userID)
                 .build();
 
         Log.i("postServerDB", url.toString());
