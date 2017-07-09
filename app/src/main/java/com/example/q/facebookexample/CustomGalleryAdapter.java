@@ -3,13 +3,19 @@ package com.example.q.facebookexample;
 import android.content.ContentUris;
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.net.Uri;
 import android.provider.ContactsContract;
+import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -22,6 +28,7 @@ import java.util.ArrayList;
  */
 
 public class CustomGalleryAdapter extends BaseAdapter {
+    public Integer imageSize = 0;
 
     private ArrayList<Picture> galleryViewItemList = new ArrayList<Picture>();
 
@@ -50,12 +57,24 @@ public class CustomGalleryAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.gallery_grid_item, parent, false);
         }
 
+        convertView.setPadding(1, 1, 1, 1);
+
         Picture gridViewItem = galleryViewItemList.get(position);
 
+        if (imageSize == 0) {
+            WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+            Display display = wm.getDefaultDisplay();
+            imageSize = display.getWidth()/3;
+        }
+
         ImageView galleryImageView = (ImageView) convertView.findViewById(R.id.galleryImageView);
+        galleryImageView.setLayoutParams(new LinearLayout.LayoutParams(imageSize, imageSize));
+        galleryImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//        galleryImageView.galleryImageView.getWidth()
+
 //        Picasso.with(context).load(gridViewItem.getThumbnailDir()).into(galleryImageView);
-//        Picasso.with(context).load(gridViewItem.getPhotoDir()).into(galleryImageView);
-        Picasso.with(context).load("http://13.124.41.33:1234/images/dummy.jpg").into(galleryImageView);
+        Picasso.with(context).load(gridViewItem.getPhotoDir()).into(galleryImageView);
+//        Picasso.with(context).load("http://13.124.41.33:1234/images/dummy.jpg").into(galleryImageView);
 
 
 //        Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, Long.valueOf(gridViewItem.getPhotoCachedDir()));

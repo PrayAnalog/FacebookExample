@@ -1,0 +1,158 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:2:1-38:12
+	package
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:3:5-44
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.READ_CONTACTS
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:5:5-72
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:5:22-69
+uses-permission#android.permission.CALL_PHONE
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:6:5-69
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:6:22-66
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:7:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:8:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:9:22-78
+application
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:11:5-36:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\q\.android\build-cache\344737806e6a691d5b813d7c37da2091e5a24ef9\output\AndroidManifest.xml:9:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:28:5-48:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\q\.android\build-cache\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\q\.android\build-cache\164c4f9a16f3c2abc3bebab2e7a86808673518f2\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\q\.android\build-cache\170a411f46d2e074f5f0b0abad20e670a78191dc\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\q\.android\build-cache\779e1cf86f57ad5ae4b2869aa1d5d72daca0e452\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\q\.android\build-cache\3d813c861b96b88d7bf29aeaa6fac8b2ebde3f6d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\q\.android\build-cache\e4d32a4817b68eeafc572c193a31ac71b0a97ce9\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\q\.android\build-cache\8181b44adad9ab0e28008bc10102fe22d9a1bf38\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\q\.android\build-cache\e7cb669ac268d619c094184865d13ad1ed942a6b\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\q\.android\build-cache\f429d6e979d8c75f2e7f625d8f96ee2c0c8a540c\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:customtabs:25.3.1] C:\Users\q\.android\build-cache\dae347e9531d4a82f3cbe1f4557b1e59d0dddd2d\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\q\.android\build-cache\4cd852fa72fb32d2e5b3fb5502fbfbe721dd07aa\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:14:9-41
+	android:supportsRtl
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:16:9-35
+	android:roundIcon
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:15:9-54
+	android:allowBackup
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:12:9-35
+	android:icon
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:13:9-43
+	android:theme
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:17:9-56
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:18:9-20:55
+	android:value
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:20:13-52
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:19:13-58
+activity#com.example.q.facebookexample.MainActivity
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:22:9-28:20
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:22:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:23:13-27:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:24:17-69
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:26:27-74
+activity#com.facebook.FacebookActivity
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:29:9-32:48
+MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:29:9-32:66
+	android:label
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:32:13-45
+	android:configChanges
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:31:13-96
+	android:theme
+		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:32:13-63
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:30:13-57
+activity#com.example.q.facebookexample.DisplayContactActivity
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:33:9-60
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:33:19-57
+activity#com.example.q.facebookexample.DisplayGalleryActivity
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:34:9-60
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:34:19-57
+activity#com.example.q.facebookexample.DisplayPictureDetailActivity
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:35:9-75
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:35:19-63
+uses-sdk
+INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\q\.android\build-cache\3690320d08eca09735a53a7d8d35bd56bd7c4b16\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\q\.android\build-cache\344737806e6a691d5b813d7c37da2091e5a24ef9\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\q\.android\build-cache\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\q\.android\build-cache\164c4f9a16f3c2abc3bebab2e7a86808673518f2\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\q\.android\build-cache\170a411f46d2e074f5f0b0abad20e670a78191dc\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\q\.android\build-cache\779e1cf86f57ad5ae4b2869aa1d5d72daca0e452\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\q\.android\build-cache\3d813c861b96b88d7bf29aeaa6fac8b2ebde3f6d\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\q\.android\build-cache\e4d32a4817b68eeafc572c193a31ac71b0a97ce9\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\q\.android\build-cache\8181b44adad9ab0e28008bc10102fe22d9a1bf38\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\q\.android\build-cache\e7cb669ac268d619c094184865d13ad1ed942a6b\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\q\.android\build-cache\f429d6e979d8c75f2e7f625d8f96ee2c0c8a540c\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:customtabs:25.3.1] C:\Users\q\.android\build-cache\dae347e9531d4a82f3cbe1f4557b1e59d0dddd2d\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\q\.android\build-cache\4cd852fa72fb32d2e5b3fb5502fbfbe721dd07aa\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\q\.android\build-cache\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\q\.android\build-cache\3690320d08eca09735a53a7d8d35bd56bd7c4b16\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\q\.android\build-cache\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\q\.android\build-cache\164c4f9a16f3c2abc3bebab2e7a86808673518f2\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\q\.android\build-cache\170a411f46d2e074f5f0b0abad20e670a78191dc\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\q\.android\build-cache\779e1cf86f57ad5ae4b2869aa1d5d72daca0e452\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\q\.android\build-cache\3d813c861b96b88d7bf29aeaa6fac8b2ebde3f6d\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\q\.android\build-cache\e4d32a4817b68eeafc572c193a31ac71b0a97ce9\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\q\.android\build-cache\8181b44adad9ab0e28008bc10102fe22d9a1bf38\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\q\.android\build-cache\e7cb669ac268d619c094184865d13ad1ed942a6b\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\q\.android\build-cache\f429d6e979d8c75f2e7f625d8f96ee2c0c8a540c\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:customtabs:25.3.1] C:\Users\q\.android\build-cache\dae347e9531d4a82f3cbe1f4557b1e59d0dddd2d\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\q\.android\build-cache\4cd852fa72fb32d2e5b3fb5502fbfbe721dd07aa\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\q\.android\build-cache\3690320d08eca09735a53a7d8d35bd56bd7c4b16\output\AndroidManifest.xml:24:9-31
+	android:name
+		ADDED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\q\.android\build-cache\3690320d08eca09735a53a7d8d35bd56bd7c4b16\output\AndroidManifest.xml:23:9-47
+activity#com.facebook.CustomTabMainActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:33:9-71
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:33:19-68
+provider#com.facebook.internal.FacebookInitProvider
+ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:44:9-47:40
+	android:authorities
+		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:46:13-72
+	android:exported
+		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:45:13-70

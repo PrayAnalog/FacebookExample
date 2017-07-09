@@ -167,6 +167,7 @@ public class DisplayContactActivity extends AppCompatActivity {
             for(int i = 0 ; i < items.length() ; i++) {
                 JSONObject item = (JSONObject) items.get(i);
                 Contact newContact = new Contact();
+
                 newContact.setID(item.getString("contactID"));
                 newContact.setPhoneNumber(item.getString("phoneNum"));
 //                newContact.setEmail(item.getString("email"));

@@ -1,5 +1,6 @@
 package com.example.q.facebookexample;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class DisplayGalleryActivity extends AppCompatActivity {
@@ -67,7 +69,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
             for(int i = 0 ; i < items.length() ; i++) {
                 JSONObject item = (JSONObject) items.get(i);
                 Picture newPicture = new Picture();
-                newPicture.setPhotoDir(scheme + "://" + host + ":" + String.valueOf(port) + "/" + item.getString("photoDir"));
+                newPicture.setPhotoDir(scheme + "://" + host + ":" + String.valueOf(port) + item.getString("photoDir"));
                 newPicture.setPhotoName(item.getString("photoName"));
 //                newPicture.setThumbnailDir(item.getString("thumbDir"));
 
@@ -117,49 +119,108 @@ public class DisplayGalleryActivity extends AppCompatActivity {
         return null;
     }
 
+    public JSONArray pictureListToJsonArray(ArrayList<Picture> pictureList) {
+//        JSONObject jObject = new JSONObject();
+        try {
+            JSONArray jArray = new JSONArray();
+            for (Picture picture : pictureList) {
+                JSONObject pictureJson = new JSONObject();
+
+
+//                contactJson.put("contactID", contact.getID());
+//                contactJson.put("name", contact.getName());
+//                contactJson.put("phoneNum", contact.getPhoneNumber());
+////                contactJson.put("email", contact.getEmail());
+
+                jArray.put(pictureJson);
+            }
+            return jArray;
+        } catch (Exception e) {
+            Log.e("contactListToJson", e.getMessage());
+        }
+        return null;
+    }
+
+    public void postServerDB(String userID, ArrayList<Picture> postPictureList) {
+        Log.i("postServerDB", "start api call : " + String.valueOf(postPictureList.size()));
+        OkHttpClient client = new OkHttpClient();
+        Log.i("postServerDB", "open client");
+        HttpUrl url = new HttpUrl.Builder()
+                .scheme(scheme)
+                .host(host)
+                .port(port)
+                .encodedPath("/api/photo/" + userID)
+                .build();
+
+        Log.i("postServerDB", url.toString());
+
+        RequestBody body = RequestBody.create(JSON, pictureListToJsonArray(postPictureList).toString());
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+
+        Log.i("postServerDB", "request build");
+
+        try {
+            Response response = client.newCall(request).execute();
+            Log.i("postServerDB", "request sended");
+            String getBody = response.body().string();
+            response.close();
+            Log.i("postServerDB", getBody);
+        } catch(Exception e) {
+            Log.e("postServerDB", e.getMessage());
+        }
+    }
 
     public void getPictures() {
         adapter = new CustomGalleryAdapter();
 
         AsyncTask.execute(new Runnable() {
+
             @Override
             public void run() {
-                try {
-                    String userID = AccessToken.getCurrentAccessToken().getUserId().toString();
-                    userID = "krista";
+            try {
+                String userID = AccessToken.getCurrentAccessToken().getUserId().toString();
+                userID = "krista";
 
-                    // get server DB
-                    ArrayList<Picture> serverPictureList = getServerDB(userID);
+                // get server DB
+                ArrayList<Picture> serverPictureList = getServerDB(userID);
 
-                    // after all toast the alarm that every contact sync
-                    runOnUiThread(new Runnable() {
-                        public void run() {
-                            Toast.makeText(getApplicationContext(), "Every Contacts Synchronized ", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                // after all toast the alarm that every contact sync
+//                    runOnUiThread(new Runnable() {
+//                        public void run() {
+//                            Toast.makeText(getApplicationContext(), "Every Contacts Synchronized ", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
 
-                    Log.i("syncServerDB", String.valueOf(serverPictureList.size()));
+                Log.i("syncServerDB", String.valueOf(serverPictureList.size()));
 
-                    // set adapter
-                    adapter.setPictureViewItemList(serverPictureList);
+                // set adapter
+                adapter.setPictureViewItemList(serverPictureList);
 
-                    displayList();
-                    if (adapter.getCount() != 0) { // there is any picture
-                        nothingNoticeGalleryTextViewGone();  // hide notice take a picture or uploading text view
-                        for(int i = 0 ; i < adapter.getCount() ; i++) {
-                            Log.i("photoDir", adapter.getPictureViewItemList().get(i).getPhotoDir());
+                displayList();
+                if (adapter.getCount() != 0) { // there is any picture
+                    nothingNoticeGalleryTextViewGone();  // hide notice take a picture or uploading text view
+                    for(int i = 0 ; i < adapter.getCount() ; i++) {
+                        Log.i("photoDir", adapter.getPictureViewItemList().get(i).getPhotoDir());
 
-                        }
                     }
-
-                } catch (Exception e) {
-                    Log.e("Error", e.getMessage());
                 }
+
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+            }
 
 
             }
         });
-
-
     }
+
+    public void showPictureDetail(View view){
+        Intent intent = new Intent(this, DisplayGalleryActivity.class);
+        startActivity(intent);
+    }
+
 }
