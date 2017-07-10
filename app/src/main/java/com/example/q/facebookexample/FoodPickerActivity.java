@@ -64,7 +64,7 @@ public class FoodPickerActivity extends AppCompatActivity {
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       picture.compress(Bitmap.CompressFormat.JPEG, 100, baos);
       imageBytes = baos.toByteArray();
-      intent = new Intent(this, ShowFoodActivitiy.class);
+      intent = new Intent(this, ShowFoodActivity.class);
 
       AsyncTask.execute(new Runnable() {
         @Override

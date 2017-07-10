@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:2:1-47:12
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:2:1-52:12
 	package
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:3:11-50
 		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
@@ -42,7 +42,7 @@ ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\Android
 	android:name
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:13:22-78
 application
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:15:5-45:19
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:15:5-50:19
 MERGED from [com.github.chrisbanes.photoview:library:1.2.3] C:\Users\q\.android\build-cache\fed02e14b6a64a12cc039689faa6c10eb7d59a95\output\AndroidManifest.xml:4:5-81
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\q\.android\build-cache\344737806e6a691d5b813d7c37da2091e5a24ef9\output\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:28:5-48:19
@@ -122,6 +122,14 @@ ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\Android
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:43:13-72
 	android:name
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:41:13-47
+activity#com.example.q.facebookexample.ShowFoodActivity
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:45:9-49:20
+	android:label
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:47:13-61
+	android:theme
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:48:13-72
+	android:name
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:46:13-45
 uses-sdk
 INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\q\.android\build-cache\3690320d08eca09735a53a7d8d35bd56bd7c4b16\output\AndroidManifest.xml:20:5-43

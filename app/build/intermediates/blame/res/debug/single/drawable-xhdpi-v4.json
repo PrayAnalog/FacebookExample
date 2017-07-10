@@ -1,19 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\com_facebook_tooltip_black_background.9.png",
         "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_black_background.9.png"
     },
     {
-        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png",
-        "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\com_facebook_tooltip_black_topnub.png",
         "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_black_topnub.png"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
@@ -32,12 +32,12 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\messenger_bubble_small_blue.png",
-        "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\drawable-xhdpi-v4\\messenger_bubble_small_blue.png"
-    },
-    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\com_facebook_button_send_icon_white.png",
         "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\drawable-xhdpi-v4\\com_facebook_button_send_icon_white.png"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\messenger_bubble_small_blue.png",
+        "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\drawable-xhdpi-v4\\messenger_bubble_small_blue.png"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",

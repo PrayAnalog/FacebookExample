@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.q.facebookexample.util.Weather;
+
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -44,7 +44,7 @@ public class ShowFoodActivity extends AppCompatActivity {
     tvWeather = (TextView) findViewById(R.id.tvWeather);
     tvWeather.setText("Hello world!");
 
-    new ReceiveWeather().execute();
+//    new ReceiveWeather().execute();
     tvWeather.setText(isCloudy + isHumid);
     tvWeather.setVisibility(View.VISIBLE);
 
@@ -74,6 +74,7 @@ public class ShowFoodActivity extends AppCompatActivity {
      * String -> get weather information.
      * @param weatherBase
      */
+
     protected void parseJSON(String weatherBase) {
       try {
         JSONObject base = new JSONObject(weatherBase);

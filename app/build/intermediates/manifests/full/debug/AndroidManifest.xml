@@ -54,6 +54,11 @@
             android:label="@string/title_activity_food_picker"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
         </activity>
+        <activity
+            android:name="com.example.q.facebookexample.ShowFoodActivity"
+            android:label="@string/title_activity_show_food"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
+        </activity>
         <activity android:name="com.facebook.CustomTabMainActivity" />
         <!--
          The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
