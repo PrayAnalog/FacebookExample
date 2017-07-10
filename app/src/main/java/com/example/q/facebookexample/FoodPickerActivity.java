@@ -10,6 +10,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 
@@ -42,8 +43,11 @@ public class FoodPickerActivity extends AppCompatActivity {
 
   public void takePhoto(View view) {
     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    intent.putExtra("camerasensortype", 2);
     startActivityForResult(intent, 1);
   }
+
+  public byte[] imageBytes;
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -51,6 +55,9 @@ public class FoodPickerActivity extends AppCompatActivity {
     Log.i("picture", String.valueOf(Activity.RESULT_OK));
     if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
       Bitmap picture = (Bitmap) data.getExtras().get("data");
+      ByteArrayOutputStream baos = new ByteArrayOutputStream();
+      picture.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+      imageBytes = baos.toByteArray();
 
       AsyncTask.execute(new Runnable() {
         @Override
@@ -65,17 +72,15 @@ public class FoodPickerActivity extends AppCompatActivity {
 
           Log.i("postServerDB", url.toString());
 
-          RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), "{ \"url\": \"http://pds27.egloos.com/pds/201401/12/35/f0364335_52d243d70a27d.jpg\" }");
+//          RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), "{ \"url\": \"http://pds27.egloos.com/pds/201401/12/35/f0364335_52d243d70a27d.jpg\" }");
+          RequestBody body = RequestBody.create(null, imageBytes);
 
           Request request = new Request.Builder()
                   .url(url)
-                  .addHeader("Content-Type", "application/json")
-                  .addHeader("Ocp-Apim-Subscription-Key", "74be6ba4f6c64b7696d2fd5754cb07c9")
+                  .addHeader("content-type", "application/octet-stream")
+                  .addHeader("ocp-apim-subscription-key", "74be6ba4f6c64b7696d2fd5754cb07c9")
                   .post(body)
                   .build();
-
-
-          Log.i("postServerDB", request.method());
 
           try {
             Response response = client.newCall(request).execute();
