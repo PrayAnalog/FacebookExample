@@ -1,8 +1,12 @@
 package com.example.q.facebookexample;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,6 +20,7 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import okhttp3.HttpUrl;
@@ -31,6 +36,7 @@ public class DisplayPictureDetailActivity extends AppCompatActivity {
     final String host = "13.124.41.33";
     final Integer port = 1234;
     final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
 
     public String photoID;
     public String photoDir;
@@ -79,7 +85,7 @@ public class DisplayPictureDetailActivity extends AppCompatActivity {
                 .scheme(scheme)
                 .host(host)
                 .port(port)
-                .encodedPath("/api/photo/" + userID)
+                .encodedPath("/api/photos/" + userID)
                 .build();
 
         Log.i("deleteServerDB", url.toString());
@@ -121,7 +127,7 @@ public class DisplayPictureDetailActivity extends AppCompatActivity {
                                     userID = "krista";
                                     ArrayList<String> deletePictureIDList = new ArrayList<String>();
                                     deletePictureIDList.add(photoID);
-//                                    deleteServerDB(userID, deletePictureIDList);
+                                    deleteServerDB(userID, deletePictureIDList);
                                 } catch (Exception e) {
                                     Log.e("Error", e.getMessage());
                                 }
@@ -144,7 +150,6 @@ public class DisplayPictureDetailActivity extends AppCompatActivity {
         AlertDialog alert = alertDelete.create();
         alert.show();
     }
-
 
 
 }

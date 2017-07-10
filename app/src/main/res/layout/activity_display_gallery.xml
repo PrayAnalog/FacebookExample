@@ -27,8 +27,9 @@
     </GridView>
 
     <ImageButton
-        android:id="@+id/taskPhotoImageButton"
+        android:id="@+id/takePhotoImageButton"
         android:src="@drawable/take_photo_image"
+        android:onClick="takePhoto"
         android:background="@android:color/transparent"
         android:layout_marginBottom="13dp"
         android:layout_width="wrap_content"

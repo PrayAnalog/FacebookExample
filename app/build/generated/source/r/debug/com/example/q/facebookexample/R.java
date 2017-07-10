@@ -2787,7 +2787,7 @@ containing a value of this type.
         public static final int submenuarrow=0x7f0b0059;
         public static final int submit_area=0x7f0b006a;
         public static final int tabMode=0x7f0b0015;
-        public static final int taskPhotoImageButton=0x7f0b0073;
+        public static final int takePhotoImageButton=0x7f0b0073;
         public static final int text=0x7f0b00a4;
         public static final int text2=0x7f0b00a2;
         public static final int textSpacerNoButtons=0x7f0b004d;
