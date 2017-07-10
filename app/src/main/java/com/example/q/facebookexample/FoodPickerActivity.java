@@ -13,8 +13,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -48,6 +52,8 @@ public class FoodPickerActivity extends AppCompatActivity {
   }
 
   public byte[] imageBytes;
+  public String scores;
+  public Intent intent;
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -58,6 +64,7 @@ public class FoodPickerActivity extends AppCompatActivity {
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       picture.compress(Bitmap.CompressFormat.JPEG, 100, baos);
       imageBytes = baos.toByteArray();
+      intent = new Intent(this, ShowFoodActivitiy.class);
 
       AsyncTask.execute(new Runnable() {
         @Override
@@ -87,13 +94,40 @@ public class FoodPickerActivity extends AppCompatActivity {
             Log.i("postServerDB", "request sended");
             String getBody = response.body().string();
             response.close();
+            scores = getBody;
             Log.i("postServerDB", getBody);
+
+            JSONArray jsonArray = new JSONArray(scores);
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+            jsonObject = jsonObject.getJSONObject("scores");
+            intent.putExtra("anger", jsonObject.getString("anger"));
+            intent.putExtra("contempt", jsonObject.getString("contempt"));
+            intent.putExtra("disgust", jsonObject.getString("disgust"));
+            intent.putExtra("fear", jsonObject.getString("fear"));
+            intent.putExtra("happiness", jsonObject.getString("happiness"));
+            intent.putExtra("neutral", jsonObject.getString("neutral"));
+            intent.putExtra("sadness", jsonObject.getString("sadness"));
+            intent.putExtra("surprise", jsonObject.getString("surprise"));
+            runOnUiThread(new Runnable() {
+              public void run() {
+                finish();
+                startActivity(intent);
+//                Toast.makeText(getApplicationContext(), "Every Contacts Synchronized ", Toast.LENGTH_SHORT).show();
+              }
+            });
+
+
           } catch(Exception e) {
             Log.e("postServerDB", e.getMessage());
           }
 
         }
       });
+
+//      Intent intent = new Intent(this, ShowFoodActivity.class);
+//      scores = "[{\"faceRectangle\":{\"height\":132,\"left\":27,\"top\":85,\"width\":132},\"scores\":{\"anger\":0.0008494227,\"contempt\":0.00536025,\"disgust\":0.0010094709,\"fear\":6.45117761E-05,\"happiness\":0.886955,\"neutral\":0.09493625,\"sadness\":0.0107531995,\"surprise\":7.185562E-05}}]";
+
 
 
     }

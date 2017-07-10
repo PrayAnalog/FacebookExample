@@ -16,7 +16,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.facebook.AccessToken;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
