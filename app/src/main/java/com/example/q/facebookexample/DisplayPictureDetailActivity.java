@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.facebook.AccessToken;
 import com.squareup.picasso.Picasso;
 
@@ -56,8 +57,8 @@ public class DisplayPictureDetailActivity extends AppCompatActivity {
         ImageView detailPictureImageView = (ImageView) findViewById(R.id.detailPictureImageView);
         ImageButton deleteImageButton = (ImageButton) findViewById(R.id.deleteImageButton);
 
+        Glide.with(getApplicationContext()).load(photoDir).into(detailPictureImageView);
 
-        Picasso.with(getApplicationContext()).load(photoDir).into(detailPictureImageView);
         PhotoViewAttacher photoViewAttacher = new PhotoViewAttacher(detailPictureImageView);
     }
 
