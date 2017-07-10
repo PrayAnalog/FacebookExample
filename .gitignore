@@ -1,3 +1,7 @@
+
+*.rawproto
+.gradle/
+.idea/
 *.iml
 .gradle
 /local.properties
@@ -8,3 +12,4 @@
 /*/build/
 /captures
 .externalNativeBuild
+

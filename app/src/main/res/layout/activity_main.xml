@@ -53,7 +53,7 @@
 
         <Button
             android:id="@+id/CButton"
-            android:onClick="showC"
+            android:onClick="showFoodPicker"
             android:text="Getclose"
             android:layout_width="127dp"
             android:layout_height="69dp"

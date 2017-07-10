@@ -3,4 +3,7 @@
     <string name="facebook_app_id">1730311417262871</string>
     <string name="fb_login_protocol_scheme">fb1730311417262871</string>
     <string name="facebook_login_id">0</string>
+    <string name="food_picker_photo_title">당신의 오늘 기분은?</string>
+    <string name="title_activity_food_picker">FoodPickerActivity</string>
+    <string name="take_picture">오늘의 사진 찍기</string>
 </resources>
