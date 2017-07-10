@@ -71,7 +71,7 @@ public class CustomGalleryAdapter extends BaseAdapter {
         galleryImageView.setLayoutParams(new LinearLayout.LayoutParams(imageSize, imageSize));
         galleryImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-        Picasso.with(context).load(gridViewItem.getThumbnailDir()).into(galleryImageView);
+        Picasso.with(context).load(gridViewItem.getPhotoDir()).into(galleryImageView);
 
         return convertView;
     }

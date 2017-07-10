@@ -2,7 +2,9 @@ package com.example.q.facebookexample;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.icu.util.Output;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -49,7 +51,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
     final Integer port = 1234;
     final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
-    public Uri mImageCaptureUri;
+    public boolean changeSomething = false;
 
     private CustomGalleryAdapter adapter = new CustomGalleryAdapter();
 
@@ -60,12 +62,16 @@ public class DisplayGalleryActivity extends AppCompatActivity {
 
         getPictures();
 
+        displayList();
+
         GridView pictureGridView = (GridView) findViewById(R.id.gridView1);
 
         final Intent intent = new Intent(this, DisplayPictureDetailActivity.class);
         pictureGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                changeSomething = true;
                 intent.putExtra("photoID", ((Picture) adapter.getItem(position)).getPhotoID());
                 intent.putExtra("photoDir", ((Picture) adapter.getItem(position)).getPhotoDir());
                 startActivity(intent);
@@ -73,10 +79,17 @@ public class DisplayGalleryActivity extends AppCompatActivity {
         });
     }
 
+//
     @Override
     protected void onResume() {
         super.onResume();
-//        getPictures();
+        if (changeSomething) {
+            Log.e("differ", "differ");
+            getPictures();
+            changeSomething = false;
+        }
+
+//        setContentView(R.layout.activity_display_gallery);
     }
 
 //
@@ -155,7 +168,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
             Log.i("getServerDB", "request sended");
             String body = response.body().string();
             response.close();
-            Log.i("getServerDB", body);
+//            Log.i("getServerDB", body);
             return jsonToPictureList(body);
         } catch(Exception e) {
             Log.e("getServerDB", "error");
@@ -163,60 +176,6 @@ public class DisplayGalleryActivity extends AppCompatActivity {
         return null;
     }
 
-    public JSONArray pictureListToJsonArray(ArrayList<Picture> pictureList) {
-//        JSONObject jObject = new JSONObject();
-        try {
-            JSONArray jArray = new JSONArray();
-            for (Picture picture : pictureList) {
-                JSONObject pictureJson = new JSONObject();
-
-
-//                contactJson.put("contactID", contact.getID());
-//                contactJson.put("name", contact.getName());
-//                contactJson.put("phoneNum", contact.getPhoneNumber());
-////                contactJson.put("email", contact.getEmail());
-
-                jArray.put(pictureJson);
-            }
-            return jArray;
-        } catch (Exception e) {
-            Log.e("contactListToJson", e.getMessage());
-        }
-        return null;
-    }
-
-    public void postServerDB(String userID, ArrayList<Picture> postPictureList) {
-        Log.i("postServerDB", "start api call : " + String.valueOf(postPictureList.size()));
-        OkHttpClient client = new OkHttpClient();
-        Log.i("postServerDB", "open client");
-        HttpUrl url = new HttpUrl.Builder()
-                .scheme(scheme)
-                .host(host)
-                .port(port)
-                .encodedPath("/api/photos/" + userID)
-                .build();
-
-        Log.i("postServerDB", url.toString());
-
-        RequestBody body = RequestBody.create(JSON, pictureListToJsonArray(postPictureList).toString());
-
-        Request request = new Request.Builder()
-                .url(url)
-                .post(body)
-                .build();
-
-        Log.i("postServerDB", "request build");
-
-        try {
-            Response response = client.newCall(request).execute();
-            Log.i("postServerDB", "request sended");
-            String getBody = response.body().string();
-            response.close();
-            Log.i("postServerDB", getBody);
-        } catch(Exception e) {
-            Log.e("postServerDB", e.getMessage());
-        }
-    }
 
     public void getPictures() {
         adapter = new CustomGalleryAdapter();
@@ -231,20 +190,11 @@ public class DisplayGalleryActivity extends AppCompatActivity {
 
                 // get server DB
                 ArrayList<Picture> serverPictureList = getServerDB(userID);
-
-                // after all toast the alarm that every contact sync
-//                    runOnUiThread(new Runnable() {
-//                        public void run() {
-//                            Toast.makeText(getApplicationContext(), "Every Contacts Synchronized ", Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-
                 Log.i("syncServerDB", String.valueOf(serverPictureList.size()));
 
                 // set adapter
                 adapter.setPictureViewItemList(serverPictureList);
 
-                displayList();
                 if (adapter.getCount() != 0) { // there is any picture
                     nothingNoticeGalleryTextViewGone();  // hide notice take a picture or uploading text view
                     for(int i = 0 ; i < adapter.getCount() ; i++) {
@@ -265,28 +215,36 @@ public class DisplayGalleryActivity extends AppCompatActivity {
 
     public void takePhoto(View view) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        startActivity(intent);
-
-//        String url = "temp_" + String.valueOf(System.currentTimeMillis()) + ".jpg";
-//        mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), url));
-//
-//        intent.putExtra(MediaStore.EXTRA_OUTPUT, url);
         startActivityForResult(intent, 1);
     }
 
-    public String encodedImage;
-    public byte[] imageBytes;
+    private String encodedImage;
+    private String filename;
+    private byte[] imageBytes;
+    private File file;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.i("picture", String.valueOf(resultCode));
         Log.i("picture", String.valueOf(Activity.RESULT_OK));
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+            changeSomething = true;
             Bitmap picture = (Bitmap) data.getExtras().get("data");
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            picture.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            picture.compress(Bitmap.CompressFormat.PNG, 100, baos);
             imageBytes = baos.toByteArray();
             encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+            filename = "ascvdfv";
+//            filename = encodedImage.substring(1005, 1010).replace('/', 'e').replace('+', 'e').replace('%', 'e');
+            String a = MediaStore.Images.Media.insertImage(getContentResolver(), picture, filename, "");
+//            Log.e("filename",encodedImage);
+//            Log.e("filename",a);
+            Uri uri = Uri.parse(a);
+            Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+            cursor.moveToNext();
+            encodedImage = cursor.getString(cursor.getColumnIndex("_data"));
+            cursor.close();
+//            file = new File(path);
 
             AsyncTask.execute(new Runnable() {
                 @Override
@@ -294,10 +252,23 @@ public class DisplayGalleryActivity extends AppCompatActivity {
                 try {
                     String userID = AccessToken.getCurrentAccessToken().getUserId().toString();
 //                    userID = "krista";
-                    postServerDB(userID, imageBytes);
+
+                    postServerDB(userID, filename, encodedImage);
                 } catch (Exception e) {
                     Log.e("Error", e.getMessage());
                 }
+
+                try {
+                    String userID = AccessToken.getCurrentAccessToken().getUserId().toString();
+                    ArrayList<Picture> serverPictureList = getServerDB(userID);
+                    Log.i("syncServerDB", String.valueOf(serverPictureList.size()));
+
+                    // set adapter
+                    adapter.setPictureViewItemList(serverPictureList);
+                } catch (Exception e) {
+                    Log.e("Error", e.getMessage());
+                }
+
 
                 }
             });
@@ -306,7 +277,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
     }
 
 
-    public void postServerDB(String userID, byte[] picture) {
+    public void postServerDB(String userID, String pictureName, String picture) {
         Log.i("postServerDB", "start api call : ");
         OkHttpClient client = new OkHttpClient();
         Log.i("postServerDB", "open client");
@@ -320,9 +291,10 @@ public class DisplayGalleryActivity extends AppCompatActivity {
         Log.i("postServerDB", url.toString());
 
 
+
         RequestBody body = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
-                .addFormDataPart("userfile", "picture.jpeg", RequestBody.create(null, picture))
+                .addFormDataPart("userfile", pictureName + ".png", RequestBody.create(null, new File(picture)))
                 .build();
 
 //        Log.i("body", picture);
