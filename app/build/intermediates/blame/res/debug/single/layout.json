@@ -20,6 +20,10 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\layout\\messenger_button_send_white_small.xml"
     },
     {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
@@ -30,6 +34,10 @@
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_layout_tab_text.xml"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_custom_big.xml",
@@ -72,6 +80,10 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_text_input_password_icon.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_show_food.xml",
         "source": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\src\\main\\res\\layout\\activity_show_food.xml"
     },
@@ -88,8 +100,16 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_bottom_navigation_item.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_large.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\layout\\messenger_button_send_blue_large.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
@@ -152,6 +172,10 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\layout\\abc_list_menu_item_radio.xml"
     },
@@ -184,8 +208,20 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\contact_list_row.xml",
         "source": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\src\\main\\res\\layout\\contact_list_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
@@ -200,12 +236,28 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_smart_device_dialog_fragment.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\layout\\com_facebook_smart_device_dialog_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gallery_grid_item.xml",
@@ -226,6 +278,10 @@
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_display_contact.xml",
         "source": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\src\\main\\res\\layout\\activity_display_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",

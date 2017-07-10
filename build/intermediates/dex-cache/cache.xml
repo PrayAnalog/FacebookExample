@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\q\.android\build-cache\ae1d6d047432a0da7adf2ead97f3af0ecc71920f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\q\AndroidStudioProjects\FacebookExample\app\build\intermediates\pre-dexed\debug\classes_ebdb07cdf42c7617f02db71559d4a76078cd64e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\q\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\gifdecoder\4.0.0-RC1\c425e31eda1069f978a0e823ad50e567ab422656\gifdecoder-4.0.0-RC1.jar"
         jumboMode="false"
         optimize="true"
@@ -54,15 +63,6 @@
         revision="26.0.0"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
         <dex dex="C:\Users\q\AndroidStudioProjects\FacebookExample\app\build\intermediates\pre-dexed\debug\okio-1.13.0_c5fd07afafc5e0f89691fb77b74cb8c02d4f7a3c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\q\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\q\AndroidStudioProjects\FacebookExample\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_b9ec1eb77770d9c9abdf6cfc87151d682035b4b8.jar" />
     </item>
     <item
         is-multidex="false"
@@ -117,6 +117,15 @@
         revision="26.0.0"
         sha1="0e0e8918eb74e3ee9e82eef6430a4359b2b577d3">
         <dex dex="C:\Users\q\AndroidStudioProjects\FacebookExample\app\build\intermediates\pre-dexed\debug\classes_4efb02fd635f36944041a0c0ce20e4c7273a706d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\q\.android\build-cache\b56781b1026be924c84e9a5e65f6e7329dab8fae\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\q\AndroidStudioProjects\FacebookExample\app\build\intermediates\pre-dexed\debug\classes_536122522c9ff9364d21574a68564e3c273c3770.jar" />
     </item>
     <item
         is-multidex="false"
