@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class CustomGalleryAdapter extends BaseAdapter {
         galleryImageView.setLayoutParams(new LinearLayout.LayoutParams(imageSize, imageSize));
         galleryImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-        Picasso.with(context).load(gridViewItem.getPhotoDir()).into(galleryImageView);
+        Glide.with(context).load(gridViewItem.getPhotoDir()).into(galleryImageView);
 
         return convertView;
     }
