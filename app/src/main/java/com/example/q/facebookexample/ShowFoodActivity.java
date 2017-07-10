@@ -29,11 +29,11 @@ import okhttp3.Response;
 
 public class ShowFoodActivity extends AppCompatActivity {
 
-  ArrayList<String> whatWeather = new ArrayList<>();
-  String isHumid = "";
-  String isCloudy = "";
-  int temperature = 0;
-  TextView tvWeather;
+  public ArrayList<String> whatWeather = new ArrayList<>();
+  public String isHumid = "";
+  public  String isCloudy = "";
+  public int temperature = 0;
+  public TextView tvWeather;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +43,9 @@ public class ShowFoodActivity extends AppCompatActivity {
     Log.d("[LOG]", "LOOOOOOOOOOOOOOOOOG");
     tvWeather = (TextView) findViewById(R.id.tvWeather);
     tvWeather.setText("Hello world!");
+//
+    new ReceiveWeather().execute();
 
-//    new ReceiveWeather().execute();
-    tvWeather.setText(isCloudy + isHumid);
     tvWeather.setVisibility(View.VISIBLE);
 
   }
@@ -64,6 +64,13 @@ public class ShowFoodActivity extends AppCompatActivity {
       try {
         response = client.newCall(request).execute();
         parseJSON(response.body().string());
+        runOnUiThread(new Runnable() {
+          public void run() {
+            tvWeather.setText("fdsvbdsvsdcds"+isCloudy + isHumid);
+//                Toast.makeText(getApplicationContext(), "Every Contacts Synchronized ", Toast.LENGTH_SHORT).show();
+          }
+        });
+
       } catch (Exception e) {
         e.printStackTrace();
       }
