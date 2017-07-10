@@ -227,7 +227,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
             public void run() {
             try {
                 String userID = AccessToken.getCurrentAccessToken().getUserId().toString();
-                userID = "krista";
+//                userID = "krista";
 
                 // get server DB
                 ArrayList<Picture> serverPictureList = getServerDB(userID);
@@ -275,6 +275,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
     }
 
     public String encodedImage;
+    public byte[] imageBytes;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -284,7 +285,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
             Bitmap picture = (Bitmap) data.getExtras().get("data");
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             picture.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-            byte[] imageBytes = baos.toByteArray();
+            imageBytes = baos.toByteArray();
             encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
 
             AsyncTask.execute(new Runnable() {
@@ -293,7 +294,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
                 try {
                     String userID = AccessToken.getCurrentAccessToken().getUserId().toString();
 //                    userID = "krista";
-                    postServerDB(userID, encodedImage);
+                    postServerDB(userID, imageBytes);
                 } catch (Exception e) {
                     Log.e("Error", e.getMessage());
                 }
@@ -305,8 +306,8 @@ public class DisplayGalleryActivity extends AppCompatActivity {
     }
 
 
-    public void postServerDB(String userID, String picture) {
-        Log.i("postServerDB", "start api call : " + String.valueOf(picture.length()));
+    public void postServerDB(String userID, byte[] picture) {
+        Log.i("postServerDB", "start api call : ");
         OkHttpClient client = new OkHttpClient();
         Log.i("postServerDB", "open client");
         HttpUrl url = new HttpUrl.Builder()
@@ -321,10 +322,10 @@ public class DisplayGalleryActivity extends AppCompatActivity {
 
         RequestBody body = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
-                .addFormDataPart("userfile", "picture.jpeg", RequestBody.create(MediaType.parse("image/jpeg"), picture))
+                .addFormDataPart("userfile", "picture.jpeg", RequestBody.create(null, picture))
                 .build();
 
-        Log.i("body", picture);
+//        Log.i("body", picture);
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)

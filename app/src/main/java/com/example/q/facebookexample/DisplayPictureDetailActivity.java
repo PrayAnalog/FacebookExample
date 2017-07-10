@@ -124,7 +124,7 @@ public class DisplayPictureDetailActivity extends AppCompatActivity {
                             public void run() {
                                 try {
                                     String userID = AccessToken.getCurrentAccessToken().getUserId().toString();
-                                    userID = "krista";
+//                                    userID = "krista";
                                     ArrayList<String> deletePictureIDList = new ArrayList<String>();
                                     deletePictureIDList.add(photoID);
                                     deleteServerDB(userID, deletePictureIDList);
