@@ -116,6 +116,8 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
+<<<<<<< HEAD
+=======
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\back2.jpg",
         "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\drawable\\back2.jpg"
     },
@@ -124,8 +126,13 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
+>>>>>>> c6fae2a80f498f3fd234b8f49cbe4f80e9c57d31
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_icon.xml",
@@ -148,12 +155,12 @@
         "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\drawable\\chicken.gif"
     },
     {
-        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
-        "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\drawable\\messenger_button_blue_bg_round.xml"
-    },
-    {
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_auth_dialog_header_background.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\5297b17a67699048cd84b318685478383345c780\\output\\res\\drawable\\com_facebook_auth_dialog_header_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\\output\\res\\drawable\\messenger_button_blue_bg_round.xml"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
@@ -254,6 +261,10 @@
     {
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_login_silver_background.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\5297b17a67699048cd84b318685478383345c780\\output\\res\\drawable\\com_facebook_button_login_silver_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\rainy.png",
+        "source": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\src\\main\\res\\drawable\\rainy.png"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
