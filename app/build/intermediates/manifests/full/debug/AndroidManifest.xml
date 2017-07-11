@@ -49,8 +49,7 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name="com.example.q.facebookexample.ShowFoodActivity"
-            android:label="@string/title_activity_show_food"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:label="@string/title_activity_show_food" />
         <activity
             android:name="com.example.q.facebookexample.LauncherActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >

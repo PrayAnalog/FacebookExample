@@ -51,7 +51,10 @@ public class ShowFoodActivity extends AppCompatActivity {
   public int temperature = 0;
   public TextView tvWeather;
 
-  public String time;
+  public ArrayList<String> time = new ArrayList<>();
+
+  public String foodCategory0 = "chicken";
+  public String foodCategory1 = "bossam";
 
   public Integer columnNumber = 3;
   public ArrayList<String> emotionArrayList = new ArrayList<>();
@@ -65,7 +68,7 @@ public class ShowFoodActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_show_food);
-    testFood();
+
 
     ImageView showEmotionImageView = (ImageView) findViewById(R.id.showEmotionImageView);
     Glide.with(this).load(R.drawable.anger).into(showEmotionImageView);
@@ -87,6 +90,7 @@ public class ShowFoodActivity extends AppCompatActivity {
      */
 
     new ReceiveWeather().execute();
+    testFood();
     tvWeather.setVisibility(View.VISIBLE);
 
     getPictures();
@@ -105,13 +109,13 @@ public class ShowFoodActivity extends AppCompatActivity {
       weathers.add("rain");
       weathers.add("snow");
       weathers.add("hot");
-      ArrayList<String> emotions = new ArrayList<>();
-      emotions.add("angry");
-      ArrayList<String> times = new ArrayList<>();
-      times.add("night");
+      ArrayList<String> emotions = this.emotionArrayList;
+//      emotions.add("angry");
+      ArrayList<String> time = this.time;
+//      time.add("night");
 
       JSONObject test = new Food.FoodBuilder()
-          .buildFoodProperty(foods, weathers, emotions, times);
+          .buildFoodProperty(foods, weathers, emotions, time);
       Iterator<String> keys = test.keys();
       int max = 0;
       String strMax = "";
@@ -135,6 +139,8 @@ public class ShowFoodActivity extends AppCompatActivity {
         }
       }
       Log.d("[FINAL TEST]", strMax + " " + strTwoMax);
+      this.foodCategory0 = strMax;
+      this.foodCategory1 = strTwoMax;
     } catch (JSONException e) {
       e.printStackTrace();
     }
@@ -146,15 +152,15 @@ public class ShowFoodActivity extends AppCompatActivity {
     int minute = calendar.get(Calendar.MINUTE);
 
     if (hour < 13 || (hour == 13 && minute < 50))
-      this.time = "lunch";
+      this.time.add("lunch");
     else if (hour < 20 || (hour == 20 && minute < 15))
-      this.time = "dinner";
+      this.time.add("dinner");
     else
-      this.time = "breakfast";
-
-    Log.i("hour", String.valueOf(hour));
-    Log.i("minute", String.valueOf(minute));
-    Log.i("time", this.time);
+      this.time.add("breakfast");
+//
+//    Log.i("hour", String.valueOf(hour));
+//    Log.i("minute", String.valueOf(minute));
+//    Log.i("time", this.time);
 
   }
   public boolean checkEmotionExist(String emotionString) {
@@ -377,9 +383,6 @@ public class ShowFoodActivity extends AppCompatActivity {
     }
     return null;
   }
-
-  public String foodCategory0 = "chicken";
-  public String foodCategory1 = "bossam";
 
   public void getPictures() {
     adapter = new CustomGalleryAdapter(columnNumber);

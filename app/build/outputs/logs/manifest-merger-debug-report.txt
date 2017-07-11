@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:2:1-60:12
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:2:1-59:12
 	package
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml
@@ -42,7 +42,7 @@ ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\Android
 	android:name
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:13:22-78
 application
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:15:5-58:19
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:15:5-57:19
 MERGED from [com.github.chrisbanes.photoview:library:1.2.3] C:\Users\q\.android\build-cache\fed02e14b6a64a12cc039689faa6c10eb7d59a95\output\AndroidManifest.xml:4:5-81
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\q\.android\build-cache\344737806e6a691d5b813d7c37da2091e5a24ef9\output\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\q\.android\build-cache\4f7dd6d8788ed9f358616eebeaaf2cb63f652ea7\output\AndroidManifest.xml:28:5-48:19
@@ -115,33 +115,31 @@ ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\Android
 	android:name
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:35:13-47
 activity#com.example.q.facebookexample.ShowFoodActivity
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:38:9-41:84
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:38:9-40:63
 	android:label
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:40:13-61
-	android:theme
-		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:41:13-72
 	android:name
 		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:39:13-45
 activity#com.example.q.facebookexample.LauncherActivity
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:42:9-50:20
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:41:9-49:20
 	android:theme
-		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:44:13-72
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:43:13-72
 	android:name
-		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:43:13-45
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:42:13-45
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:45:13-49:29
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:44:13-48:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:46:17-69
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:45:17-69
 	android:name
-		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:46:25-66
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:45:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:48:17-77
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:47:17-77
 	android:name
-		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:48:27-74
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:47:27-74
 activity#com.example.q.facebookexample.EmotionLauncherActivity
-ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:51:9-57:20
+ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:50:9-56:20
 	android:name
-		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:51:19-58
+		ADDED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml:50:19-58
 uses-sdk
 INJECTED from C:\Users\q\AndroidStudioProjects\FacebookExample\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.github.chrisbanes.photoview:library:1.2.3] C:\Users\q\.android\build-cache\fed02e14b6a64a12cc039689faa6c10eb7d59a95\output\AndroidManifest.xml:2:5-72
