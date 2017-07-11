@@ -4,14 +4,17 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.q.facebookexample.util.Food;
 import com.example.q.facebookexample.util.Picture;
 import com.facebook.AccessToken;
@@ -28,7 +31,9 @@ import java.io.StringReader;
 import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Locale;
 
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -43,16 +48,35 @@ public class ShowFoodActivity extends AppCompatActivity {
   public int temperature = 0;
   public TextView tvWeather;
 
+  public String time;
+
+  public Integer columnNumber = 3;
+  public ArrayList<String> emotionArrayList = new ArrayList<>();
+
   final String scheme = "http";
   final String host = "13.124.41.33";
   final Integer port = 1234;
-  private CustomGalleryAdapter adapter = new CustomGalleryAdapter();
+  private CustomGalleryAdapter adapter = new CustomGalleryAdapter(columnNumber);
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_show_food);
 
+//    ImageView showWeatherImageView = (ImageView) findViewById(R.id.showWeatherImageView);
+//    showWeatherImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//    showWeatherImageView.setAlpha((float) 0.5);
+//    Glide.with(this).load(R.drawable.rainy_image).into(showWeatherImageView);
+
+    ImageView showEmotionImageView = (ImageView) findViewById(R.id.showEmotionImageView);
+    Glide.with(this).load(R.drawable.anger).into(showEmotionImageView);
+
+    CollapsingToolbarLayout ctl = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
+    ctl.setTitle("Details");
+
+    setEmotionArrayList();
+    setTime();
+    Log.i("EmotionArrayList", emotionArrayList.toString());
     Log.d("[LOG]", "LOOOOOOOOOOOOOOOOOG");
     tvWeather = (TextView) findViewById(R.id.tvWeather);
     tvWeather.setText("Hello world!");
@@ -61,6 +85,63 @@ public class ShowFoodActivity extends AppCompatActivity {
     tvWeather.setVisibility(View.VISIBLE);
 
     getPictures();
+  }
+
+  public void setTime() {
+    Calendar calendar = Calendar.getInstance(Locale.getDefault());
+    int hour = calendar.get(Calendar.HOUR_OF_DAY);
+    int minute = calendar.get(Calendar.MINUTE);
+
+    if (hour < 13 || (hour == 13 && minute < 50))
+      this.time = "lunch";
+    else if (hour < 20 || (hour == 20 && minute < 15))
+      this.time = "dinner";
+    else
+      this.time = "breakfast";
+
+    Log.i("hour", String.valueOf(hour));
+    Log.i("minute", String.valueOf(minute));
+    Log.i("time", this.time);
+
+  }
+  public boolean checkEmotionExist(String emotionString) {
+    if (emotionString.contains("E"))
+      return false;
+    Integer emotionInt = Integer.valueOf(emotionString.substring(2,4));
+//    Log.e(emotionString, String.valueOf(emotionInt));
+    if (emotionInt < 12)
+      return false;
+    return true;
+  }
+
+  public void setEmotionArrayList() {
+    Intent currentIntent = getIntent();
+    String anger = currentIntent.getStringExtra("anger");
+    String contempt = currentIntent.getStringExtra("contempt");
+    String disgust = currentIntent.getStringExtra("disgust");
+    String fear = currentIntent.getStringExtra("fear");
+    String happiness = currentIntent.getStringExtra("happiness");
+    String neutral = currentIntent.getStringExtra("neutral");
+    String sadness = currentIntent.getStringExtra("sadness");
+    String surprise = currentIntent.getStringExtra("surprise");
+
+    if (checkEmotionExist(anger))
+      emotionArrayList.add("anger");
+    if (checkEmotionExist(contempt))
+      emotionArrayList.add("contempt");
+    if (checkEmotionExist(disgust))
+      emotionArrayList.add("disgust");
+    if (checkEmotionExist(fear))
+      emotionArrayList.add("fear");
+    if (checkEmotionExist(happiness))
+      emotionArrayList.add("happiness");
+    if (checkEmotionExist(neutral))
+      emotionArrayList.add("neutral");
+    if (checkEmotionExist(sadness))
+      emotionArrayList.add("sadness");
+    if (checkEmotionExist(surprise))
+      emotionArrayList.add("surprise");
+
   }
 
   public void setFood(String foodName) {
@@ -166,6 +247,7 @@ public class ShowFoodActivity extends AppCompatActivity {
   // display the list by global adapter
   private void displayList() {
     GridView gridView = (GridView) findViewById(R.id.gridView2);
+    gridView.setNumColumns(columnNumber);
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
       gridView.setNestedScrollingEnabled(true);
@@ -178,9 +260,9 @@ public class ShowFoodActivity extends AppCompatActivity {
   public ArrayList<Picture> jsonToPictureList(String body) {
     ArrayList<Picture> serverPictureList = new ArrayList<>();
     try {
-      Log.i("jsonToPictureList", "parsing start");
+//      Log.i("jsonToPictureList", "parsing start");
       JSONArray items = new JSONArray(body);
-      Log.i("jsonToPictureList", "body to JSONArray");
+//      Log.i("jsonToPictureList", "body to JSONArray");
       for(int i = 0 ; i < items.length() ; i++) {
         JSONObject item = (JSONObject) items.get(i);
         Picture newPicture = new Picture();
@@ -194,7 +276,7 @@ public class ShowFoodActivity extends AppCompatActivity {
         serverPictureList.add(newPicture);
       }
 
-      Log.i("jsonToPictureList", "parsing finish");
+//      Log.i("jsonToPictureList", "parsing finish");
       return serverPictureList;
 
     } catch (JSONException e) {
@@ -204,9 +286,9 @@ public class ShowFoodActivity extends AppCompatActivity {
   }
 
   public ArrayList<Picture> getServerDB(String userID) {
-    Log.i("getServerDB", "start api call");
+//    Log.i("getServerDB", "start api call");
     OkHttpClient client = new OkHttpClient();
-    Log.i("getServerDB", "open client");
+//    Log.i("getServerDB", "open client");
     HttpUrl url = new HttpUrl.Builder()
             .scheme(scheme)
             .host(host)
@@ -214,18 +296,18 @@ public class ShowFoodActivity extends AppCompatActivity {
             .encodedPath("/api/photos/" + userID)
             .build();
 
-    Log.i("getServerDB", url.toString());
+//    Log.i("getServerDB", url.toString());
     Request request = new Request.Builder()
             .url(url)
             .get()
             .build();
 
-    Log.i("getServerDB", "request build");
+//    Log.i("getServerDB", "request build");
 
     try {
-      Log.i("getServerDB", "just before request execute");
+//      Log.i("getServerDB", "just before request execute");
       Response response = client.newCall(request).execute();
-      Log.i("getServerDB", "request sended");
+//      Log.i("getServerDB", "request sended");
       String body = response.body().string();
       response.close();
 //      Log.i("getServerDB", body);
@@ -240,7 +322,7 @@ public class ShowFoodActivity extends AppCompatActivity {
   public String foodCategory1 = "bossam";
 
   public void getPictures() {
-    adapter = new CustomGalleryAdapter();
+    adapter = new CustomGalleryAdapter(columnNumber);
     AsyncTask.execute(new Runnable() {
 
       @Override

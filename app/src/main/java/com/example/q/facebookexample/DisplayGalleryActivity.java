@@ -43,7 +43,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
 
     public boolean changeSomething = false;
 
-    private CustomGalleryAdapter adapter = new CustomGalleryAdapter();
+    private CustomGalleryAdapter adapter = new CustomGalleryAdapter(3);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +51,9 @@ public class DisplayGalleryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_gallery);
 
         getPictures();
-        displayList();
 
         GridView pictureGridView = (GridView) findViewById(R.id.gridView1);
+        pictureGridView.setNumColumns(3);
 
         final Intent intent = new Intent(this, DisplayPictureDetailActivity.class);
         pictureGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -94,6 +94,12 @@ public class DisplayGalleryActivity extends AppCompatActivity {
     public void nothingNoticeGalleryTextViewGone() {
         TextView nothingNoticeGalleryTextView = (TextView) findViewById(R.id.nothingNoticeGalleryTextView);
         nothingNoticeGalleryTextView.setVisibility(View.GONE);
+    }
+
+
+    public void nothingNoticeGalleryTextViewAppear() {
+        TextView nothingNoticeGalleryTextView = (TextView) findViewById(R.id.nothingNoticeGalleryTextView);
+        nothingNoticeGalleryTextView.setVisibility(View.VISIBLE);
     }
 
     // display the list by global adapter
@@ -161,14 +167,14 @@ public class DisplayGalleryActivity extends AppCompatActivity {
 //            Log.i("getServerDB", body);
             return jsonToPictureList(body);
         } catch(Exception e) {
-            Log.e("getServerDB", "error");
+            Log.e("getServerDB", e.getMessage());
         }
         return null;
     }
 
 
     public void getPictures() {
-        adapter = new CustomGalleryAdapter();
+        adapter = new CustomGalleryAdapter(3);
 
         AsyncTask.execute(new Runnable() {
 
@@ -180,17 +186,35 @@ public class DisplayGalleryActivity extends AppCompatActivity {
 
                 // get server DB
                 ArrayList<Picture> serverPictureList = getServerDB(userID);
+                while (serverPictureList == null) // retry
+                    serverPictureList = getServerDB(userID);
                 Log.i("syncServerDB", String.valueOf(serverPictureList.size()));
+                Log.i("[here]", "right?");
 
                 // set adapter
                 adapter.setPictureViewItemList(serverPictureList);
 
+                Log.i("[here]", "right? here?");
                 if (adapter.getCount() != 0) { // there is any picture
-                    nothingNoticeGalleryTextViewGone();  // hide notice take a picture or uploading text view
+                      // hide notice take a picture or uploading text view
                     for(int i = 0 ; i < adapter.getCount() ; i++) {
                         Log.i("photoDir", adapter.getPictureViewItemList().get(i).getPhotoDir());
 
                     }
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            nothingNoticeGalleryTextViewGone();
+                            displayList();
+                        }
+                    });
+
+                } else {
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            nothingNoticeGalleryTextViewAppear();
+                            displayList();
+                        }
+                    });
                 }
 
             } catch (Exception e) {
@@ -224,8 +248,8 @@ public class DisplayGalleryActivity extends AppCompatActivity {
             picture.compress(Bitmap.CompressFormat.PNG, 100, baos);
             imageBytes = baos.toByteArray();
             encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-            filename = "ascvdfv";
-//            filename = encodedImage.substring(1005, 1010).replace('/', 'e').replace('+', 'e').replace('%', 'e');
+//            filename = "ascvdfv";
+            filename = encodedImage.substring(1005, 1010).replace('/', 'e').replace('+', 'e').replace('%', 'e');
             String a = MediaStore.Images.Media.insertImage(getContentResolver(), picture, filename, "");
 //            Log.e("filename",encodedImage);
 //            Log.e("filename",a);

@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.ImageViewTarget;
@@ -20,6 +21,10 @@ public class LauncherActivity extends AppCompatActivity {
     }
     ImageView imgChicken = (ImageView) findViewById(R.id.imageView);
     Glide.with(this).load(R.drawable.chicken).into(imgChicken);
+
+//    imgChicken.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
+    imgChicken.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
     Handler hd = new Handler();
     hd.postDelayed(new Runnable() {
       @Override
