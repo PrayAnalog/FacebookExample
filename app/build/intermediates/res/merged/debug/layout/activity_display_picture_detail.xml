@@ -16,14 +16,18 @@
 
     <ImageButton
         android:id="@+id/deleteImageButton"
-        android:src="@drawable/delete_image"
-        android:onClick="deleteImage"
-        android:background="@android:color/transparent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="13dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:onClick="deleteImage"
+        android:scaleType="fitCenter"
+        android:src="@drawable/delete_image"
+        app:srcCompat="@drawable/trashbean"/>
 
 </RelativeLayout>

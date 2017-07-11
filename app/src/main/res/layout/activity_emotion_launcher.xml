@@ -5,29 +5,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
     tools:context="com.example.q.facebookexample.LauncherActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:fontFamily="monospace"
-        android:text="@string/loading"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="291dp"
-        android:layout_above="@+id/progressBar2"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="83dp"/>
+        android:layout_centerVertical="true"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/loading"
+        android:textColor="@color/mainBackbarTheme"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="291dp"/>
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="86dp"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginBottom="38dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_toLeftOf="@+id/imageView4"
+        android:layout_toStartOf="@+id/imageView4"
+        android:background="@color/cardview_light_background"
+        app:srcCompat="@drawable/food1"/>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/cardview_light_background"
+        app:srcCompat="@drawable/food1"
+        android:layout_marginTop="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/imageView7"
+        android:layout_alignStart="@+id/imageView7"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/food4"
+        android:layout_alignTop="@+id/imageView6"
+        android:layout_alignLeft="@+id/imageView8"
+        android:layout_alignStart="@+id/imageView8"/>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/food4"/>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/food5"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3"/>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        app:srcCompat="@drawable/food5"
+        android:layout_alignTop="@+id/imageView8"
+        android:layout_toRightOf="@+id/imageView8"
+        android:layout_toEndOf="@+id/imageView8"/>
 
 </RelativeLayout>

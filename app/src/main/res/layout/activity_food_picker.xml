@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back1"
+    android:background="@drawable/com_facebook_auth_dialog_background"
     android:orientation="horizontal"
     android:weightSum="1">
 
@@ -12,27 +13,37 @@
         android:id="@+id/foodPickerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/takePhotoButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
         android:text="@string/food_picker_photo_title"
-        android:textColor="@color/colorAccent"
-        android:textSize="40sp"
+        android:textColor="?android:attr/textColorPrimaryDisableOnly"
+        android:textSize="30sp"
         tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="221dp"/>
+        tools:layout_editor_absoluteY="221dp"
+        android:layout_marginBottom="39dp"
+        android:layout_above="@+id/takePhotoButton"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/takePhotoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="196dp"
-        android:background="@color/mainBackbarTheme"
+        android:background="@drawable/icon"
+        android:fontFamily="casual"
         android:onClick="takePhoto"
-        android:text="@string/take_picture"
-        android:textColor="@color/colorAccent"
+        android:text="Take Today's Photo"
+        android:textColor="?android:attr/fastScrollTextColor"
         tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="282dp"/>
+        tools:layout_editor_absoluteY="282dp"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/food1"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

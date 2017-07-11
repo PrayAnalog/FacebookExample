@@ -115,7 +115,7 @@ public class DisplayContactActivity extends AppCompatActivity {
 
 
         searchBox = (EditText) findViewById(R.id.contactSearchBox);
-        searchBox.setHintTextColor(Color.WHITE);
+        searchBox.setHintTextColor(Color.BLACK);
         searchBox.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable arg0) {
                 // ignore

@@ -7,8 +7,8 @@
     <color name="angryState">#F44336</color>
     <color name="happyState">#F06292</color>
     <color name="sadState">#1A237E</color>
-    <color name="mainTheme">#5109c3</color>
-    <color name="mainBackbarTheme">#380090</color>
-    <color name="mainStatusTheme">#380090</color>
+    <color name="mainTheme">#f48017</color>
+    <color name="mainBackbarTheme">#000000</color>
+    <color name="mainStatusTheme">#b05e14</color>
     <color name="mainBackground0Theme">#fbf9ff</color>
 </resources>
