@@ -7,60 +7,103 @@
     android:id="@+id/mainRelativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back1"
     tools:context="com.example.q.facebookexample.MainActivity">
+
 
     <TextView
         android:id="@+id/loginNoticeTextView"
-        android:text="Please Login Facebook"
-        android:textSize="25sp"
-        android:layout_marginBottom="39dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/facebookLoginButton"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_marginBottom="39dp"
+        android:text="Please Login Facebook"
+        android:textSize="25sp"/>
 
     <Button
         android:id="@+id/facebookLoginButton"
-        android:onClick="facebookLoginOnClick"
-        android:text="login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="282dp"
-        android:layout_marginBottom="196dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="196dp"
+        android:onClick="facebookLoginOnClick"
+        android:text="login_button"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="282dp"/>
 
-    <LinearLayout
-        android:id="@+id/logicLinearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/logicRelativeLayout"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/contactButton"
-            android:onClick="showContact"
-            android:text="phonebook"
-            android:layout_width="127dp"
-            android:layout_height="69dp"
-            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="0.04"
+            android:background="@color/colorAccent"
+            android:text="TextView"/>
 
-        <Button
-            android:id="@+id/galleryButton"
-            android:onClick="showGallery"
-            android:text="Gallery"
-            android:layout_width="127dp"
-            android:layout_height="69dp"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:id="@+id/logicLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="0.04"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/CButton"
-            android:onClick="showFoodPicker"
-            android:text="Getclose"
-            android:layout_width="127dp"
-            android:layout_height="69dp"
-            android:layout_weight="1" />
+            <Button
+                android:id="@+id/contactButton"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/mainTheme"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:onClick="showContact"
+                android:text="phonebook"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/galleryButton"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/mainTheme"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:onClick="showGallery"
+                android:text="Gallery"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/CButton"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/mainTheme"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:onClick="showFoodPicker"
+                android:text="Today's Food!"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>
 

@@ -2,9 +2,13 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#fbf9ff</color>
     <color name="white">#ffffff</color>
     <color name="angryState">#F44336</color>
     <color name="happyState">#F06292</color>
     <color name="sadState">#1A237E</color>
+    <color name="mainTheme">#5109c3</color>
+    <color name="mainBackbarTheme">#380090</color>
+    <color name="mainStatusTheme">#380090</color>
+    <color name="mainBackground0Theme">#fbf9ff</color>
 </resources>

@@ -3,9 +3,14 @@ package com.example.q.facebookexample;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -44,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
+        getSupportActionBar().setHomeAsUpIndicator(
+            new ColorDrawable(ContextCompat.getColor(this, R.color.mainTheme))
+        );
+        getSupportActionBar().setBackgroundDrawable(
+            new ColorDrawable(ContextCompat.getColor(this, R.color.mainBackbarTheme)));
+        */
+
     }
 
 
@@ -56,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void abcButtonGone() {
-        LinearLayout logicLinearLayout = (LinearLayout) findViewById(R.id.logicLinearLayout);
-        logicLinearLayout.setVisibility(View.GONE);
+        RelativeLayout logicRelativeLayout = (RelativeLayout) findViewById(R.id.logicRelativeLayout);
+        logicRelativeLayout.setVisibility(View.GONE);
     }
 
 
