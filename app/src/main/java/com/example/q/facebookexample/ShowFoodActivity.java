@@ -29,6 +29,7 @@ import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -52,17 +53,69 @@ public class ShowFoodActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_show_food);
-
-    Log.d("[LOG]", "LOOOOOOOOOOOOOOOOOG");
+    //Intent intent = getIntent();
+    //Log.d("[INTENT RECEIVE]", intent.getStringExtra("anger"));
+    testFood();
     tvWeather = (TextView) findViewById(R.id.tvWeather);
     tvWeather.setText("Hello world!");
-//
+
+    /**
+     * let's test
+     */
+
     new ReceiveWeather().execute();
     tvWeather.setVisibility(View.VISIBLE);
 
     getPictures();
   }
 
+  /**
+   * let's test
+   */
+  public void testFood(){
+    try {
+      ArrayList<String> foods = new ArrayList<>();
+      foods.add("chicken");
+      foods.add("bossam");
+      foods.add("chinese");
+      ArrayList<String> weathers = new ArrayList<>();
+      weathers.add("rain");
+      weathers.add("snow");
+      weathers.add("hot");
+      ArrayList<String> emotions = new ArrayList<>();
+      emotions.add("angry");
+      ArrayList<String> times = new ArrayList<>();
+      times.add("night");
+
+      JSONObject test = new Food.FoodBuilder()
+          .buildFoodProperty(foods, weathers, emotions, times);
+      Iterator<String> keys = test.keys();
+      int max = 0;
+      String strMax = "";
+      int twoMax = 0;
+      String strTwoMax = "";
+
+      while (keys.hasNext()){
+        String key = String.valueOf(keys.next());
+        if(test.getInt(key) > max) {
+          max = test.getInt(key);
+          strMax = key;
+        }
+      }
+      test.put(strMax, 0);
+      keys = test.keys();
+      while (keys.hasNext()){
+        String key = String.valueOf(keys.next());
+        if(test.getInt(key) > twoMax) {
+          twoMax = test.getInt(key);
+          strTwoMax = key;
+        }
+      }
+      Log.d("[FINAL TEST]", strMax + " " + strTwoMax);
+    } catch (JSONException e) {
+      e.printStackTrace();
+    }
+  }
   public void setFood(String foodName) {
     /**
      * this is example of class Food using.
@@ -82,7 +135,7 @@ public class ShowFoodActivity extends AppCompatActivity {
       weathers.put("rain", 4);
       weathers.put("humid", 10);
 
-      time.put("day", 0);
+      time.put("lunch", 2);
 
       Food chicken = new Food.Builder()
           .setName("Chicken")
@@ -90,7 +143,7 @@ public class ShowFoodActivity extends AppCompatActivity {
           .setWeather(weathers)
           .setDay(time)
           .build();
-
+      Log.d("[BuilderTest]", String.valueOf(chicken.getFoodProperty()));
       int chickenProperty = chicken.getFoodProperty();
     } catch (JSONException e) {
       e.printStackTrace();
