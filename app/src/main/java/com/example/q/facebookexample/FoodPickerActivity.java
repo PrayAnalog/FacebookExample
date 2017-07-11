@@ -98,6 +98,14 @@ public class FoodPickerActivity extends AppCompatActivity {
             Log.i("postServerDB", getBody);
 
             JSONArray jsonArray = new JSONArray(scores);
+            if (jsonArray.length() == 0) {
+              Log.i("postServerDB", "length 0");
+              runOnUiThread(new Runnable() {
+                public void run() {
+                  Toast.makeText(getApplicationContext(), "take picture with face", Toast.LENGTH_SHORT).show();
+                }
+              });
+            }
             JSONObject jsonObject = jsonArray.getJSONObject(0);
 
             jsonObject = jsonObject.getJSONObject("scores");

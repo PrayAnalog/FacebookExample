@@ -1,4 +1,4 @@
-package com.example.q.facebookexample;
+package com.example.q.facebookexample.util;
 
 import android.util.Log;
 

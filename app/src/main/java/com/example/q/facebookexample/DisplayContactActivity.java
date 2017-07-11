@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.q.facebookexample.util.Contact;
 import com.facebook.AccessToken;
 
 import org.json.JSONArray;

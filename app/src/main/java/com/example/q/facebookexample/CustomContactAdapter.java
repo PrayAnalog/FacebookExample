@@ -12,6 +12,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.q.facebookexample.util.Contact;
+
 import java.io.InputStream;
 import java.util.ArrayList;
 

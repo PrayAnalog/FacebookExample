@@ -1,7 +1,4 @@
-#Tue Jul 11 14:38:01 KST 2017
-base.0=C\:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_a4065459e8400861ba844d4199ab581916756edd
-renamed.1=classes2.dex
+#Tue Jul 11 15:52:39 KST 2017
+base.0=C\:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.1=C\:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_4b326768b3cb0e66e1fb976a7efb0bcc59c2a13e\\classes.dex
-base.1=C\:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_4b326768b3cb0e66e1fb976a7efb0bcc59c2a13e
-file.0=C\:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_a4065459e8400861ba844d4199ab581916756edd\\classes.dex
+file.0=C\:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
