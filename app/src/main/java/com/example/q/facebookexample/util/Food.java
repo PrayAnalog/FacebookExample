@@ -138,10 +138,10 @@ public class Food {
     public Builder setWeather(JSONObject weathers) {
       try{
         final Iterator<String> keys = weathers.keys();
-        do {
+        while (keys.hasNext()) {
           String key = String.valueOf(keys.next());
           this.food.weather.put(key, weathers.getInt(key));
-        } while (keys.hasNext());
+        }
       } catch (JSONException e) {
         e.printStackTrace();
       }
@@ -180,6 +180,10 @@ public class Food {
     ArrayList<int[]> chicken = new ArrayList<>();
     ArrayList<int[]> bossam = new ArrayList<>();
     ArrayList<int[]> chinese = new ArrayList<>();
+    ArrayList<int[]> cold = new ArrayList<>();
+    ArrayList<int[]> meat = new ArrayList<>();
+    ArrayList<int[]> noodle = new ArrayList<>();
+    ArrayList<int[]> flour = new ArrayList<>();
 
     /**
      * for recognition
@@ -188,9 +192,9 @@ public class Food {
      * (lunch dinner breakfast)
      */
     public void setChicken(){
-      int[] weather = {1, 2, 3, 2, 2, 2, 2};
-      int[] emotions = {3, 1, 1, 1, 3, 2, 2, 2};
-      int[] time = {1, 1, 5};
+      int[] weather = {2, 2, 2, 2, 1, 2, 1};
+      int[] emotions = {4, 1, 1, 1, 1, 1, 1, 1};
+      int[] time = {1, 2, 5};
       chicken.add(weather);
       chicken.add(emotions);
       chicken.add(time);
@@ -203,9 +207,9 @@ public class Food {
      * (lunch dinner breakfast)
      */
     public void setBossam(){
-      int[] weather = {1, 3, 1, 1, 2, 1, 1};
-      int[] emotions = {1, 1, 2, 1, 2, 3, 1, 1};
-      int[] time = {1, 5, 1};
+      int[] weather = {1, 3, 2, 1, 2, 2, 1};
+      int[] emotions = {1, 1, 1, 1, 3, 2, 1, 3};
+      int[] time = {2, 3, 4};
       bossam.add(weather);
       bossam.add(emotions);
       bossam.add(time);
@@ -218,18 +222,82 @@ public class Food {
      * (lunch dinner breakfast)
      */
     public void setChinese(){
-      int[] weather = {1, 1, 1, 2, 2, 1, 2};
-      int[] emotions = {1, 1, 1, 1, 2, 2, 3, 1};
-      int[] time = {5, 2, 1};
+      int[] weather = {2, 2, 2, 1, 2, 1, 2};
+      int[] emotions = {1, 1, 1, 1, 1, 2, 1, 2};
+      int[] time = {3, 3, 1};
       chinese.add(weather);
       chinese.add(emotions);
       chinese.add(time);
+    }
+
+    /**
+     * for recognition
+     * (hot cold neutral rain snow humid dry)
+     * (anger contempt disgust fear happiness neutral sadness surprise
+     * (lunch dinner breakfast)
+     */
+    public void setCold(){
+      int[] weather = {2, 1, 1, 1, 1, 3, 1};
+      int[] emotions = {1, 1, 1, 1, 1, 2, 1, 1};
+      int[] time = {1, 1, 1};
+      cold.add(weather);
+      cold.add(emotions);
+      cold.add(time);
+    }
+
+    /**
+     * for recognition
+     * (hot cold neutral rain snow humid dry)
+     * (anger contempt disgust fear happiness neutral sadness surprise
+     * (lunch dinner breakfast)
+     */
+    public void setMeat(){
+      int[] weather = {1, 2, 3, 1, 2, 2, 1};
+      int[] emotions = {3, 1, 1, 1, 1, 1, 3, 1};
+      int[] time = {2, 5, 1};
+      meat.add(weather);
+      meat.add(emotions);
+      meat.add(time);
+    }
+
+    /**
+     * for recognition
+     * (hot cold neutral rain snow humid dry)
+     * (anger contempt disgust fear happiness neutral sadness surprise
+     * (lunch dinner breakfast)
+     */
+    public void setNoodle(){
+      int[] weather = {2, 2, 2, 3, 1, 1, 1};
+      int[] emotions = {1, 1, 1, 1, 4, 1, 1, 1};
+      int[] time = {3, 1, 4};
+      noodle.add(weather);
+      noodle.add(emotions);
+      noodle.add(time);
+    }
+
+    /**
+     * for recognition
+     * (hot cold neutral rain snow humid dry)
+     * (anger contempt disgust fear happiness neutral sadness surprise
+     * (lunch dinner breakfast)
+     */
+    public void setFlour(){
+      int[] weather = {1, 3, 2, 1, 3, 1, 1};
+      int[] emotions = {2, 1, 1, 1, 3, 1, 1, 1};
+      int[] time = {3, 1, 4};
+      flour.add(weather);
+      flour.add(emotions);
+      flour.add(time);
     }
 
     public FoodBuilder() {
       setChicken();
       setBossam();
       setChinese();
+      setCold();
+      setMeat();
+      setNoodle();
+      setFlour();
     }
 
     public JSONObject buildFoodProperty(ArrayList<String> foodNames, ArrayList<String> weathers,
@@ -255,6 +323,26 @@ public class Food {
               weatherBase = chinese.get(0);
               emotionBase = chinese.get(1);
               timeBase = chinese.get(2);
+              break;
+            case "cold":
+              weatherBase = cold.get(0);
+              emotionBase = cold.get(1);
+              timeBase = cold.get(2);
+              break;
+            case "meat":
+              weatherBase = meat.get(0);
+              emotionBase = meat.get(1);
+              timeBase = meat.get(2);
+              break;
+            case "noodle":
+              weatherBase = noodle.get(0);
+              emotionBase = noodle.get(1);
+              timeBase = noodle.get(2);
+              break;
+            case "flour":
+              weatherBase = flour.get(0);
+              emotionBase = flour.get(1);
+              timeBase = flour.get(2);
               break;
             default:
               weatherBase = chicken.get(0);
@@ -288,6 +376,7 @@ public class Food {
               }
             }
           }
+
           Food newFood = new Builder()
               .setName(foodName)
               .setWeather(weather)

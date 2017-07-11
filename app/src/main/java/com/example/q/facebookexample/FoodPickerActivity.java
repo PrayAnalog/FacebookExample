@@ -60,7 +60,7 @@ public class FoodPickerActivity extends AppCompatActivity {
   public ArrayList<String> whatWeather = new ArrayList<>();
   public String isHumid = "";
   public String isCloudy = "";
-  public int temperature = 0;
+  public String strTemp = "";
 
 
   @Override
@@ -133,7 +133,7 @@ public class FoodPickerActivity extends AppCompatActivity {
 
             intent.putExtra("isHumid", isHumid);
             intent.putExtra("isCloudy", isCloudy);
-            intent.putExtra("temperature", temperature);
+            intent.putExtra("strTemp", strTemp);
             intent.putStringArrayListExtra("whatWeather", whatWeather);
 
             runOnUiThread(new Runnable() {
@@ -184,7 +184,7 @@ public class FoodPickerActivity extends AppCompatActivity {
 
       JSONArray baseWeather = base.getJSONArray("weather");
 
-      temperature = temp.getInt("temp")-273;
+      Integer temperature = temp.getInt("temp")-273;
 
       int cloudSize = cloud.getInt("all");
       if(cloudSize >= 70) {isCloudy = "very cloudy";}
@@ -192,9 +192,14 @@ public class FoodPickerActivity extends AppCompatActivity {
       else {isCloudy = "not cloudy";}
 
       int humid = temp.getInt("humidity");
-      if(humid >= 70){isHumid = "very humid";}
-      else if(humid >= 30){isHumid = "so - so";}
+      if(humid >= 70){isHumid = "humid";}
+      else if(humid >= 30){isHumid = "neutral";}
       else {isHumid = "dry";}
+
+
+      if(temperature >= 25) {strTemp = "hot";}
+      else if(temperature >= 10) {strTemp = "neutral"; }
+      else {strTemp = "cold";}
 
       for(int i = 0; i < baseWeather.length(); i++) {
         JSONObject eachWeather = (JSONObject) baseWeather.get(i);

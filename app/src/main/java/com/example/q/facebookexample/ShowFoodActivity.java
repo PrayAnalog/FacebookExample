@@ -48,7 +48,6 @@ public class ShowFoodActivity extends AppCompatActivity {
   public String isHumid = "";
   public  String isCloudy = "";
   public String strTemp = "";
-  public int temperature = 0;
 
   public ArrayList<String> time = new ArrayList<>();
 
@@ -86,6 +85,10 @@ public class ShowFoodActivity extends AppCompatActivity {
     this.foods.add("chicken");
     this.foods.add("bossam");
     this.foods.add("chinese");
+    this.foods.add("cold");
+    this.foods.add("meat");
+    this.foods.add("noodle");
+    this.foods.add("flour");
 
     
     testFood();
@@ -98,7 +101,7 @@ public class ShowFoodActivity extends AppCompatActivity {
 
     this.isHumid = intent.getStringExtra("isHumid");
     this.isCloudy = intent.getStringExtra("isCloudy");
-    this.temperature = intent.getIntExtra("temperature", -273);
+    this.strTemp = intent.getStringExtra("strTemp");
     this.whatWeather = intent.getStringArrayListExtra("whatWeather");
   }
 
@@ -107,14 +110,12 @@ public class ShowFoodActivity extends AppCompatActivity {
    */
   public void testFood(){
     try {
-      ArrayList<String> foods = new ArrayList<>();
-      foods.add("chicken");
-      foods.add("bossam");
-      foods.add("chinese");
-      ArrayList<String> weathers = new ArrayList<>();
-      weathers.add("rain");
-      weathers.add("snow");
-      weathers.add("hot");
+      ArrayList<String> foods = this.foods;
+      ArrayList<String> weathers = this.whatWeather;
+      if(isHumid != "neutral"){weathers.add(isHumid);}
+      weathers.add(isCloudy);
+      weathers.add(strTemp);
+      Log.i("weather", weathers.toString());
       ArrayList<String> emotions = this.emotionArrayList;
 //      emotions.add("angry");
       ArrayList<String> time = this.time;
@@ -157,9 +158,9 @@ public class ShowFoodActivity extends AppCompatActivity {
     int hour = calendar.get(Calendar.HOUR_OF_DAY);
     int minute = calendar.get(Calendar.MINUTE);
 
-    if (hour < 13 || (hour == 13 && minute < 50))
+    if ((9 < hour && hour < 13) || (hour == 13 && minute < 50))
       this.time.add("lunch");
-    else if (hour < 20 || (hour == 20 && minute < 15))
+    else if ((9 < hour ) && (hour < 20) || (hour == 20 && minute < 15))
       this.time.add("dinner");
     else
       this.time.add("breakfast");
