@@ -1,6 +1,6 @@
 package com.example.q.facebookexample;
 
-import android.app.Activity;
+import android.app.*;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -60,6 +60,8 @@ public class FoodPickerActivity extends AppCompatActivity {
     Log.i("picture", String.valueOf(resultCode));
     Log.i("picture", String.valueOf(Activity.RESULT_OK));
     if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+//      Intent newIntent = new Intent(this, LauncherActivity.class);
+//      startActivity(newIntent);
       Bitmap picture = (Bitmap) data.getExtras().get("data");
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       picture.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -98,6 +100,14 @@ public class FoodPickerActivity extends AppCompatActivity {
             Log.i("postServerDB", getBody);
 
             JSONArray jsonArray = new JSONArray(scores);
+            if (jsonArray.length() == 0) {
+              Log.i("postServerDB", "length 0");
+              runOnUiThread(new Runnable() {
+                public void run() {
+                  Toast.makeText(getApplicationContext(), "take picture with face", Toast.LENGTH_SHORT).show();
+                }
+              });
+            }
             JSONObject jsonObject = jsonArray.getJSONObject(0);
 
             jsonObject = jsonObject.getJSONObject("scores");

@@ -1,26 +1,18 @@
 package com.example.q.facebookexample;
 
-import android.content.ContentUris;
 import android.content.Context;
-import android.graphics.BitmapFactory;
-import android.graphics.Point;
-import android.net.Uri;
-import android.provider.ContactsContract;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.q.facebookexample.util.Picture;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 
 /**
@@ -86,8 +78,9 @@ public class CustomGalleryAdapter extends BaseAdapter {
         return galleryViewItemList.get(position) ;
     }
 
-    public void addItem(String photoName, String photoDir, String photoThumbnailDir) {
+    public void addItem(String photoID, String photoName, String photoDir, String photoThumbnailDir) {
         Picture item = new Picture();
+        item.setPhotoID(photoID);
         item.setPhotoName(photoName);
         item.setPhotoDir(photoDir);
         item.setThumbnailDir(photoThumbnailDir);

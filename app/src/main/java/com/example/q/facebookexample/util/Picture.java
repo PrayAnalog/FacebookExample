@@ -1,4 +1,4 @@
-package com.example.q.facebookexample;
+package com.example.q.facebookexample.util;
 
 /**
  * Created by q on 2017-07-09.
