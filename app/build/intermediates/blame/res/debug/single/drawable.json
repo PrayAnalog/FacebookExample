@@ -72,12 +72,12 @@
         "source": "C:\\Users\\q\\.android\\build-cache\\b56781b1026be924c84e9a5e65f6e7329dab8fae\\output\\res\\drawable\\design_snackbar_background.xml"
     },
     {
-        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\android_image.png",
-        "source": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\src\\main\\res\\drawable\\android_image.png"
-    },
-    {
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\android_image.png",
+        "source": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\src\\main\\res\\drawable\\android_image.png"
     },
     {
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
@@ -100,6 +100,14 @@
         "source": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\src\\main\\res\\drawable\\take_photo_image.png"
     },
     {
+        "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\propill.png",
+        "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\drawable\\propill.png"
+    },
+    {
+        "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\call_icon.png",
+        "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\drawable\\call_icon.png"
+    },
+    {
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_login_background.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\5297b17a67699048cd84b318685478383345c780\\output\\res\\drawable\\com_facebook_button_login_background.xml"
     },
@@ -120,12 +128,12 @@
         "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\drawable\\back2.jpg"
     },
     {
-        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
-        "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
-    },
-    {
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_icon.xml",
@@ -450,6 +458,10 @@
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\phonecall.png",
+        "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\drawable\\phonecall.png"
     },
     {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",

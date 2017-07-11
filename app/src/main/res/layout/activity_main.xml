@@ -35,8 +35,8 @@
 
     <RelativeLayout
         android:id="@+id/logicRelativeLayout"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:gravity="center"
@@ -51,7 +51,8 @@
             android:layout_alignParentTop="true"
             android:layout_weight="0.04"
             android:background="@color/colorAccent"
-            android:text="TextView"/>
+            android:text="오늘 뭐 먹지????"
+            android:textAlignment="center"/>
 
         <LinearLayout
             android:id="@+id/logicLinearLayout"
@@ -98,7 +99,7 @@
                 android:fontFamily="casual"
                 android:gravity="center"
                 android:onClick="showFoodPicker"
-                android:text="Today's Food!"
+                android:text="Today's Food"
                 android:textColor="@color/colorAccent"
                 android:textSize="12sp"/>
         </LinearLayout>

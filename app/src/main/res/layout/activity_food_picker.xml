@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back1"
     android:orientation="horizontal"
     android:weightSum="1">
 
@@ -11,24 +12,27 @@
         android:id="@+id/foodPickerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/food_picker_photo_title"
-        tools:layout_editor_absoluteY="221dp"
-        tools:layout_editor_absoluteX="163dp"
-        android:layout_marginBottom="72dp"
-        android:textSize="40sp"
         android:layout_above="@+id/takePhotoButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="@string/food_picker_photo_title"
+        android:textColor="@color/colorAccent"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="221dp"/>
 
     <Button
         android:id="@+id/takePhotoButton"
-        android:onClick="takePhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/take_picture"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="282dp"
-        android:layout_marginBottom="196dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="196dp"
+        android:background="@color/mainBackbarTheme"
+        android:onClick="takePhoto"
+        android:text="@string/take_picture"
+        android:textColor="@color/colorAccent"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="282dp"/>
 
 </RelativeLayout>
