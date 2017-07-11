@@ -9,9 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-
+import com.example.q.facebookexample.util.Food;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 import org.w3c.dom.Text;
@@ -46,10 +47,45 @@ public class ShowFoodActivity extends AppCompatActivity {
 //
     new ReceiveWeather().execute();
 
+
+
     tvWeather.setVisibility(View.VISIBLE);
 
   }
 
+  public void setFood(String foodName) {
+    /**
+     * this is example of class Food using.
+     * need JSONObjects.
+     */
+    /**
+     * this is example of Food class using
+     */
+    try {
+      JSONObject emotions = new JSONObject();
+      JSONObject weathers = new JSONObject();
+      JSONObject time = new JSONObject();
+
+      emotions.put("anger", 3);
+      emotions.put("happiness", 4);
+
+      weathers.put("rain", 4);
+      weathers.put("humid", 10);
+
+      time.put("day", 0);
+
+      Food chicken = new Food.Builder()
+          .setName("Chicken")
+          .setEmotion(emotions)
+          .setWeather(weathers)
+          .setDay(time)
+          .build();
+
+      int chickenProperty = chicken.getFoodProperty();
+    } catch (JSONException e) {
+      e.printStackTrace();
+    }
+  }
   public class ReceiveWeather extends AsyncTask<URL, Integer, Long> {
     protected Long doInBackground(URL...urls) {
       String url = "http://api.openweathermap.org/data/2.5/weather?lat=37.56826&lon=126.977829&APPID=182e99c0604dd0da45f4cbe349e5f065";

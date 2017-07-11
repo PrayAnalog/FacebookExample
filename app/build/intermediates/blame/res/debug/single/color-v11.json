@@ -1,5 +1,13 @@
 [
     {
+        "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
         "source": "C:\\Users\\q\\.android\\build-cache\\0d7f3a7b17a2f253bcadadbecf78d1c9a2d874be\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },

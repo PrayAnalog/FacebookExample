@@ -1,5 +1,13 @@
 [
     {
+        "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
+        "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
         "source": "C:\\Users\\q\\AndroidStudioProjects\\FacebookExample\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
