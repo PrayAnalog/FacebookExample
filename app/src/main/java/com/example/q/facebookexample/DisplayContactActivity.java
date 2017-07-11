@@ -4,6 +4,7 @@ package com.example.q.facebookexample;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -112,7 +113,9 @@ public class DisplayContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_contact);
 
+
         searchBox = (EditText) findViewById(R.id.contactSearchBox);
+        searchBox.setHintTextColor(Color.WHITE);
         searchBox.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable arg0) {
                 // ignore
