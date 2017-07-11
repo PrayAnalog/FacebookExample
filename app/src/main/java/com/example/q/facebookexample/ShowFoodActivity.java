@@ -44,8 +44,10 @@ import okhttp3.Response;
 public class ShowFoodActivity extends AppCompatActivity {
 
   public ArrayList<String> whatWeather = new ArrayList<>();
+  public ArrayList<String> foods = new ArrayList<>();
   public String isHumid = "";
   public  String isCloudy = "";
+  public String strTemp = "";
   public int temperature = 0;
   public TextView tvWeather;
 
@@ -73,7 +75,10 @@ public class ShowFoodActivity extends AppCompatActivity {
 
     setEmotionArrayList();
     setTime();
-    
+
+    this.foods.add("chicken");
+    this.foods.add("bossam");
+    this.foods.add("chinese");
     tvWeather = (TextView) findViewById(R.id.tvWeather);
     tvWeather.setText("Hello world!");
 
@@ -273,15 +278,22 @@ public class ShowFoodActivity extends AppCompatActivity {
         else if(cloudSize >= 50) {isCloudy = "cloudy";}
         else {isCloudy = "not cloudy";}
 
+        if(temperature > 25) {strTemp = "hot";}
+        else if(temperature > 10) {strTemp = "cold";}
+        else {strTemp = "neutral";}
+
         int humid = temp.getInt("humidity");
-        if(humid >= 70){isHumid = "very humid";}
-        else if(humid >= 30){isHumid = "so - so";}
+        if(humid >= 70){isHumid = "humid";}
+        else if(humid >= 30){isHumid = "neutral";}
         else {isHumid = "dry";}
 
         for(int i = 0; i < baseWeather.length(); i++) {
           JSONObject eachWeather = (JSONObject) baseWeather.get(i);
           whatWeather.add(eachWeather.getString("main"));
         }
+        if(isHumid != "neutral") {whatWeather.add(isHumid);}
+        whatWeather.add(strTemp);
+
         TextView tvWeathers = new TextView(ShowFoodActivity.this);
         Log.d("[LOOG]", isHumid+isCloudy);
         tvWeathers.setText(isHumid+isCloudy);

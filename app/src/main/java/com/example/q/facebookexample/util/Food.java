@@ -53,7 +53,7 @@ public class Food {
       JSONObject emotions = new JSONObject();
       emotions.put("hot", 1);
       emotions.put("cold", 1);
-      emotions.put("newtral", 1);
+      emotions.put("neutral", 1);
       emotions.put("rain", 1);
       emotions.put("snow", 1);
       emotions.put("humid", 1);
