@@ -8,8 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +33,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     final int showContactPermission = 100;       // for permission checking final value
     final int showGalleryPermission = 101;       // for permission checking final value
+    final int showFoodPickerPermission = 102;       // for permission checking final value
 
 
     private CallbackManager callbackManager;
@@ -36,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -140,6 +146,15 @@ public class MainActivity extends AppCompatActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     showGallery(getCurrentFocus()); // permission was granted, yay! Do the contacts-related task you need to do.
+                }
+                else {      // permission denied, boo! Disable the functionality that depends on this permission.
+                    Toast.makeText(this, "No Permissions ", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+            case showFoodPickerPermission: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     showFoodPicker(getCurrentFocus());
                 }
                 else {      // permission denied, boo! Disable the functionality that depends on this permission.
@@ -188,10 +203,10 @@ public class MainActivity extends AppCompatActivity {
     public void showFoodPicker(View view) {
         Intent intent = new Intent(this, FoodPickerActivity.class);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, showGalleryPermission);
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, showFoodPickerPermission);
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M  && checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA}, showGalleryPermission);
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, showFoodPickerPermission);
         }
         else{
             startActivity(intent);

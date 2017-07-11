@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.facebook.AccessToken;
@@ -132,9 +133,14 @@ public class DisplayPictureDetailActivity extends AppCompatActivity {
                                     Log.e("Error", e.getMessage());
                                 }
 
+                                runOnUiThread(new Runnable() {
+                                    public void run() {
+
+                                        finish();
+                                    }
+                                });
                             }
                         });
-                        finish();
 
                     }
                 }).setNegativeButton("Cancel",

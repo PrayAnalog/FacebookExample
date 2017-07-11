@@ -21,11 +21,12 @@ import java.util.ArrayList;
 
 public class CustomGalleryAdapter extends BaseAdapter {
     public Integer imageSize = 0;
+    public Integer column = 3;
 
     private ArrayList<Picture> galleryViewItemList = new ArrayList<Picture>();
 
-    public CustomGalleryAdapter() {
-
+    public CustomGalleryAdapter(Integer column) {
+        this.column = column;
     }
 
     public ArrayList<Picture> getPictureViewItemList() {
@@ -56,7 +57,7 @@ public class CustomGalleryAdapter extends BaseAdapter {
         if (imageSize == 0) {
             WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             Display display = wm.getDefaultDisplay();
-            imageSize = display.getWidth()/3;
+            imageSize = display.getWidth()/this.column;
         }
 
         ImageView galleryImageView = (ImageView) convertView.findViewById(R.id.galleryImageView);
