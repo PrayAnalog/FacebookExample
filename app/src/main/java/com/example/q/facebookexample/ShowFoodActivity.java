@@ -49,7 +49,6 @@ public class ShowFoodActivity extends AppCompatActivity {
   public  String isCloudy = "";
   public String strTemp = "";
   public int temperature = 0;
-  public TextView tvWeather;
 
   public ArrayList<String> time = new ArrayList<>();
 
@@ -73,8 +72,13 @@ public class ShowFoodActivity extends AppCompatActivity {
     ImageView showEmotionImageView = (ImageView) findViewById(R.id.showEmotionImageView);
     Glide.with(this).load(R.drawable.anger).into(showEmotionImageView);
 
+    ImageView showWeatherImageView = (ImageView) findViewById(R.id.showWeatherImageView);
+    Glide.with(this).load(R.drawable.rainy).into(showWeatherImageView);
+
     CollapsingToolbarLayout ctl = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
-    ctl.setTitle("Details");
+    ctl.setTitle("오늘의 추천");
+
+    setWeatherInformation();
 
     setEmotionArrayList();
     setTime();
@@ -82,18 +86,20 @@ public class ShowFoodActivity extends AppCompatActivity {
     this.foods.add("chicken");
     this.foods.add("bossam");
     this.foods.add("chinese");
-    tvWeather = (TextView) findViewById(R.id.tvWeather);
-    tvWeather.setText("Hello world!");
 
-    /**
-     * let's test
-     */
-
-    new ReceiveWeather().execute();
+    
     testFood();
-    tvWeather.setVisibility(View.VISIBLE);
 
     getPictures();
+  }
+
+  public void setWeatherInformation() {
+    Intent intent = getIntent();
+
+    this.isHumid = intent.getStringExtra("isHumid");
+    this.isCloudy = intent.getStringExtra("isCloudy");
+    this.temperature = intent.getIntExtra("temperature", -273);
+    this.whatWeather = intent.getStringArrayListExtra("whatWeather");
   }
 
   /**
@@ -234,78 +240,6 @@ public class ShowFoodActivity extends AppCompatActivity {
       int chickenProperty = chicken.getFoodProperty();
     } catch (JSONException e) {
       e.printStackTrace();
-    }
-  }
-
-  public class ReceiveWeather extends AsyncTask<URL, Integer, Long> {
-    protected Long doInBackground(URL...urls) {
-      String url = "http://api.openweathermap.org/data/2.5/weather?lat=37.56826&lon=126.977829&APPID=182e99c0604dd0da45f4cbe349e5f065";
-      OkHttpClient client = new OkHttpClient();
-
-      Request request = new Request.Builder()
-          .url(url)
-          .get()
-          .build();
-
-      Response response = null;
-      try {
-        response = client.newCall(request).execute();
-        parseJSON(response.body().string());
-        runOnUiThread(new Runnable() {
-          public void run() {
-            tvWeather.setText("fdsvbdsvsdcds"+isCloudy + isHumid);
-//                Toast.makeText(getApplicationContext(), "Every Contacts Synchronized ", Toast.LENGTH_SHORT).show();
-          }
-        });
-
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-      return null;
-    }
-
-    /**
-     * String -> get weather information.
-     * @param weatherBase
-     */
-
-    protected void parseJSON(String weatherBase) {
-      try {
-        JSONObject base = new JSONObject(weatherBase);
-        JSONObject temp = (JSONObject) base.getJSONObject("main");
-        JSONObject cloud = (JSONObject) base.getJSONObject("clouds");
-
-        JSONArray baseWeather = base.getJSONArray("weather");
-
-        temperature = temp.getInt("temp")-273;
-
-        int cloudSize = cloud.getInt("all");
-        if(cloudSize >= 70) {isCloudy = "very cloudy";}
-        else if(cloudSize >= 50) {isCloudy = "cloudy";}
-        else {isCloudy = "not cloudy";}
-
-        if(temperature > 25) {strTemp = "hot";}
-        else if(temperature > 10) {strTemp = "cold";}
-        else {strTemp = "neutral";}
-
-        int humid = temp.getInt("humidity");
-        if(humid >= 70){isHumid = "humid";}
-        else if(humid >= 30){isHumid = "neutral";}
-        else {isHumid = "dry";}
-
-        for(int i = 0; i < baseWeather.length(); i++) {
-          JSONObject eachWeather = (JSONObject) baseWeather.get(i);
-          whatWeather.add(eachWeather.getString("main"));
-        }
-        if(isHumid != "neutral") {whatWeather.add(isHumid);}
-        whatWeather.add(strTemp);
-
-        TextView tvWeathers = new TextView(ShowFoodActivity.this);
-        Log.d("[LOOG]", isHumid+isCloudy);
-        tvWeathers.setText(isHumid+isCloudy);
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
     }
   }
 

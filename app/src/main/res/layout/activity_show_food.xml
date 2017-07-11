@@ -22,31 +22,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/showEmotionImageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/tvWeather"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="fbvdcfvadsefasdf"
-                        android:textSize="18sp"
-                        android:visibility="visible"/>
-
-                </RelativeLayout>
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/asdv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:id="@+id/showEmotionImageView"
+                    android:layout_margin="10dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp" />
+
+                <ImageView
+                    android:id="@+id/showWeatherImageView"
+                    android:layout_margin="10dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp" />
 
             </LinearLayout>
 
