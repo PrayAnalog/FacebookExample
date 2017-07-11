@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*
         Button textView = (Button) findViewById(R.id.fakeview);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override

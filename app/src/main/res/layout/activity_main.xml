@@ -43,7 +43,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true">
 
-        <Button
+        <ImageView
             android:id="@+id/fakeview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
