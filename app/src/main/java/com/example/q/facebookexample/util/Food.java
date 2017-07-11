@@ -99,7 +99,11 @@ public class Food {
     return 0;
   }
 
-
+  /**
+   * builder for Food
+   * Try builder
+   * Food inside functions are private
+   */
   public static class Builder {
     public String name;
     public Food food = new Food("");
