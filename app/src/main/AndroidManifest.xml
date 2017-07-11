@@ -37,7 +37,8 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
         <activity
             android:name=".ShowFoodActivity"
-            android:label="@string/title_activity_show_food"/>
+            android:label="@string/title_activity_show_food"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".LauncherActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">

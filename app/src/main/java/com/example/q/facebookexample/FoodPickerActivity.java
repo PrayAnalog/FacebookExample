@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -25,6 +26,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 
 import okhttp3.HttpUrl;
@@ -55,6 +57,12 @@ public class FoodPickerActivity extends AppCompatActivity {
   public String scores;
   public Intent intent;
 
+  public ArrayList<String> whatWeather = new ArrayList<>();
+  public String isHumid = "";
+  public String isCloudy = "";
+  public int temperature = 0;
+
+
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     Log.i("picture", String.valueOf(resultCode));
@@ -71,6 +79,8 @@ public class FoodPickerActivity extends AppCompatActivity {
       AsyncTask.execute(new Runnable() {
         @Override
         public void run() {
+          receiveWeather();
+
           OkHttpClient client = new OkHttpClient();
           Log.i("postServerDB", "open client");
           HttpUrl url = new HttpUrl.Builder()
@@ -102,7 +112,6 @@ public class FoodPickerActivity extends AppCompatActivity {
             JSONArray jsonArray = new JSONArray(scores);
             if (jsonArray.length() == 0) {
               Log.i("postServerDB", "length 0");
-              newIntent.putExtra("finish", "finish");
               runOnUiThread(new Runnable() {
                 public void run() {
                   EmotionLauncherActivity.a.finish();
@@ -121,6 +130,12 @@ public class FoodPickerActivity extends AppCompatActivity {
             intent.putExtra("neutral", jsonObject.getString("neutral"));
             intent.putExtra("sadness", jsonObject.getString("sadness"));
             intent.putExtra("surprise", jsonObject.getString("surprise"));
+
+            intent.putExtra("isHumid", isHumid);
+            intent.putExtra("isCloudy", isCloudy);
+            intent.putExtra("temperature", temperature);
+            intent.putStringArrayListExtra("whatWeather", whatWeather);
+
             runOnUiThread(new Runnable() {
               public void run() {
                 finish();
@@ -136,13 +151,57 @@ public class FoodPickerActivity extends AppCompatActivity {
 
         }
       });
-
-//      Intent intent = new Intent(this, ShowFoodActivity.class);
-//      scores = "[{\"faceRectangle\":{\"height\":132,\"left\":27,\"top\":85,\"width\":132},\"scores\":{\"anger\":0.0008494227,\"contempt\":0.00536025,\"disgust\":0.0010094709,\"fear\":6.45117761E-05,\"happiness\":0.886955,\"neutral\":0.09493625,\"sadness\":0.0107531995,\"surprise\":7.185562E-05}}]";
-
-
-
     }
   }
 
+  public void receiveWeather() {
+    String url = "http://api.openweathermap.org/data/2.5/weather?lat=37.56826&lon=126.977829&APPID=182e99c0604dd0da45f4cbe349e5f065";
+    OkHttpClient client = new OkHttpClient();
+
+    Request request = new Request.Builder()
+            .url(url)
+            .get()
+            .build();
+
+    try {
+      Response response = client.newCall(request).execute();
+      parseJSON(response.body().string());
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * String -> get weather information.
+   * @param weatherBase
+   */
+
+  protected void parseJSON(String weatherBase) {
+    try {
+      JSONObject base = new JSONObject(weatherBase);
+      JSONObject temp = (JSONObject) base.getJSONObject("main");
+      JSONObject cloud = (JSONObject) base.getJSONObject("clouds");
+
+      JSONArray baseWeather = base.getJSONArray("weather");
+
+      temperature = temp.getInt("temp")-273;
+
+      int cloudSize = cloud.getInt("all");
+      if(cloudSize >= 70) {isCloudy = "very cloudy";}
+      else if(cloudSize >= 50) {isCloudy = "cloudy";}
+      else {isCloudy = "not cloudy";}
+
+      int humid = temp.getInt("humidity");
+      if(humid >= 70){isHumid = "very humid";}
+      else if(humid >= 30){isHumid = "so - so";}
+      else {isHumid = "dry";}
+
+      for(int i = 0; i < baseWeather.length(); i++) {
+        JSONObject eachWeather = (JSONObject) baseWeather.get(i);
+        whatWeather.add(eachWeather.getString("main"));
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 }
