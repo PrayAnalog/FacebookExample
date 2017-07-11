@@ -38,7 +38,6 @@
         <activity
             android:name=".ShowFoodActivity"
             android:label="@string/title_activity_show_food"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
         <activity
             android:name=".LauncherActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
@@ -54,6 +53,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".LauncherActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
         </activity>
     </application>
 
