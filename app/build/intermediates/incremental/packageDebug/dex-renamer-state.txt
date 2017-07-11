@@ -1,4 +1,4 @@
-#Wed Jul 12 02:48:12 KST 2017
+#Wed Jul 12 03:57:14 KST 2017
 base.0=C\:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_4b326768b3cb0e66e1fb976a7efb0bcc59c2a13e
 renamed.1=classes.dex
 renamed.0=classes2.dex

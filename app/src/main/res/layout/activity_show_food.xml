@@ -5,53 +5,6 @@
     android:layout_height="match_parent">
 
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_height="192dp"
-        android:layout_width="match_parent">
-
-
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:toolbarId="@+id/toolbar"
-            android:id="@+id/collapsingToolbarLayout"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:contentScrim="?attr/colorPrimary">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/showEmotionImageView"
-                    android:layout_margin="10dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp" />
-
-                <ImageView
-                    android:id="@+id/showWeatherImageView"
-                    android:layout_margin="10dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp" />
-
-            </LinearLayout>
-
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_width="match_parent">
-
-            </android.support.v7.widget.Toolbar>
-
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-    </android.support.design.widget.AppBarLayout>
-
-
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -79,6 +32,58 @@
         </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="192dp">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/showEmotionImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"/>
+
+                <ImageView
+                    android:id="@+id/showWeatherImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"/>
+
+                <ImageView
+                    android:id="@+id/showTimeImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

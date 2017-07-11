@@ -1,10 +1,12 @@
 package com.example.q.facebookexample;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -69,18 +71,52 @@ public class ShowFoodActivity extends AppCompatActivity {
 
 
     ImageView showEmotionImageView = (ImageView) findViewById(R.id.showEmotionImageView);
-    Glide.with(this).load(R.drawable.anger).into(showEmotionImageView);
+    Glide.with(this).load(R.drawable.realangry).into(showEmotionImageView);
 
     ImageView showWeatherImageView = (ImageView) findViewById(R.id.showWeatherImageView);
-    Glide.with(this).load(R.drawable.rainy).into(showWeatherImageView);
+    Glide.with(this).load(R.drawable.realrain).into(showWeatherImageView);
+
+    ImageView showTimeImageView = (ImageView) findViewById(R.id.showTimeImageView);
+    Glide.with(this).load(R.drawable.yasik).into(showTimeImageView);
+
 
     CollapsingToolbarLayout ctl = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
     ctl.setTitle("오늘의 추천");
+    ctl.setExpandedTitleColor(Color.WHITE);
+    ctl.setCollapsedTitleTextColor(Color.WHITE);
+    ctl.setBackgroundColor(ContextCompat.getColor(this, R.color.mainTheme));
+    ctl.setStatusBarScrimColor(ContextCompat.getColor(this, R.color.mainTheme));
+    ctl.setContentScrimColor(ContextCompat.getColor(this, R.color.mainTheme));
 
     setWeatherInformation();
-
     setEmotionArrayList();
     setTime();
+
+    if(time.get(0) == "lunch") {
+      Glide.with(this).load(R.drawable.reallunch).into(showTimeImageView);
+    } else if(time.get(0) == "dinner") {
+      Glide.with(this).load(R.drawable.realdinner).into(showTimeImageView);
+    } else if(time.get(0) == "breakfast") {
+      Glide.with(this).load(R.drawable.yasik).into(showTimeImageView);
+    }
+
+    if(emotionArrayList.contains("anger")) {
+      Glide.with(this).load(R.drawable.realangry).into(showEmotionImageView);
+    } else if(emotionArrayList.contains("happiness")) {
+      Glide.with(this).load(R.drawable.realhappy).into(showEmotionImageView);
+    } else if(emotionArrayList.contains("neutral")) {
+      Glide.with(this).load(R.drawable.realsoso).into(showEmotionImageView);
+    } else if(emotionArrayList.contains("sadness")) {
+      Glide.with(this).load(R.drawable.realsad).into(showEmotionImageView);
+    }
+
+    if(whatWeather.contains("rain")) {
+      Glide.with(this).load(R.drawable.realrain).into(showWeatherImageView);
+    } else if(whatWeather.contains("neutral")) {
+      Glide.with(this).load(R.drawable.realsunny).into(showWeatherImageView);
+    } else if(whatWeather.contains("hot")) {
+      Glide.with(this).load(R.drawable.realsunny).into(showWeatherImageView);
+    }
 
     this.foods.add("chicken");
     this.foods.add("bossam");
@@ -173,7 +209,10 @@ public class ShowFoodActivity extends AppCompatActivity {
   public boolean checkEmotionExist(String emotionString) {
     if (emotionString.contains("E"))
       return false;
-    Integer emotionInt = Integer.valueOf(emotionString.substring(2,4));
+    if (emotionString.length() == 3)
+      return true;
+
+      Integer emotionInt = Integer.valueOf(emotionString.substring(2,4));
 //    Log.e(emotionString, String.valueOf(emotionInt));
     if (emotionInt < 12)
       return false;

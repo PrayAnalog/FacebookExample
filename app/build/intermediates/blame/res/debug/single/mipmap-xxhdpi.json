@@ -4,6 +4,10 @@
         "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gallery.png",
+        "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\mipmap-xxhdpi\\gallery.png"
+    },
+    {
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher_round.png",
         "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     }

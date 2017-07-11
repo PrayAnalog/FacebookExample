@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\gallery.png",
+        "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\mipmap-mdpi\\gallery.png"
+    },
+    {
         "merged": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
         "source": "C:\\Users\\q\\Documents\\GitHub\\FacebookExample\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },

@@ -18,6 +18,7 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageView myImage = (ImageView) findViewById(R.id.fakeview);
+        float alpha = 0.6F;
+        myImage.setAlpha(alpha);
         /*
         Button textView = (Button) findViewById(R.id.fakeview);
         textView.setOnClickListener(new View.OnClickListener() {

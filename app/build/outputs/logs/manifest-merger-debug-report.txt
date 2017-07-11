@@ -60,7 +60,7 @@ MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\q\.android\bui
 MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\q\.android\build-cache\e4d32a4817b68eeafc572c193a31ac71b0a97ce9\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\q\.android\build-cache\4cd852fa72fb32d2e5b3fb5502fbfbe721dd07aa\output\AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from C:\Users\q\Documents\GitHub\FacebookExample\app\src\main\AndroidManifest.xml:18:9-41
+		ADDED from C:\Users\q\Documents\GitHub\FacebookExample\app\src\main\AndroidManifest.xml:18:9-37
 	android:supportsRtl
 		ADDED from C:\Users\q\Documents\GitHub\FacebookExample\app\src\main\AndroidManifest.xml:20:9-35
 	android:hardwareAccelerated
@@ -70,7 +70,7 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\q\.android\buil
 	android:allowBackup
 		ADDED from C:\Users\q\Documents\GitHub\FacebookExample\app\src\main\AndroidManifest.xml:16:9-35
 	android:icon
-		ADDED from C:\Users\q\Documents\GitHub\FacebookExample\app\src\main\AndroidManifest.xml:17:9-43
+		ADDED from C:\Users\q\Documents\GitHub\FacebookExample\app\src\main\AndroidManifest.xml:17:9-39
 	android:theme
 		ADDED from C:\Users\q\Documents\GitHub\FacebookExample\app\src\main\AndroidManifest.xml:21:9-40
 meta-data#com.facebook.sdk.ApplicationId
