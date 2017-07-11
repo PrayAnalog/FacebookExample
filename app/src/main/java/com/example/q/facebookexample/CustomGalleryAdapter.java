@@ -78,8 +78,9 @@ public class CustomGalleryAdapter extends BaseAdapter {
         return galleryViewItemList.get(position) ;
     }
 
-    public void addItem(String photoName, String photoDir, String photoThumbnailDir) {
+    public void addItem(String photoID, String photoName, String photoDir, String photoThumbnailDir) {
         Picture item = new Picture();
+        item.setPhotoID(photoID);
         item.setPhotoName(photoName);
         item.setPhotoDir(photoDir);
         item.setThumbnailDir(photoThumbnailDir);

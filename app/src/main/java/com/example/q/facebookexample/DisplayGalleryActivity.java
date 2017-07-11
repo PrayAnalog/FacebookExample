@@ -51,7 +51,6 @@ public class DisplayGalleryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_gallery);
 
         getPictures();
-
         displayList();
 
         GridView pictureGridView = (GridView) findViewById(R.id.gridView1);
@@ -113,6 +112,7 @@ public class DisplayGalleryActivity extends AppCompatActivity {
             for(int i = 0 ; i < items.length() ; i++) {
                 JSONObject item = (JSONObject) items.get(i);
                 Picture newPicture = new Picture();
+
                 newPicture.setPhotoID(item.getString("_id"));
                 newPicture.setPhotoDir(scheme + "://" + host + ":" + String.valueOf(port) + "/" + item.getString("photoDir"));
                 newPicture.setPhotoName(item.getString("photoName"));
