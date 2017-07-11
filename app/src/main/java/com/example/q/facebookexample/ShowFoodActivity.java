@@ -44,8 +44,10 @@ import okhttp3.Response;
 public class ShowFoodActivity extends AppCompatActivity {
 
   public ArrayList<String> whatWeather = new ArrayList<>();
+  public ArrayList<String> foods = new ArrayList<>();
   public String isHumid = "";
   public  String isCloudy = "";
+  public String strTemp = "";
   public int temperature = 0;
 
   public ArrayList<String> time = new ArrayList<>();
@@ -81,8 +83,11 @@ public class ShowFoodActivity extends AppCompatActivity {
     setEmotionArrayList();
     setTime();
 
+    this.foods.add("chicken");
+    this.foods.add("bossam");
+    this.foods.add("chinese");
 
-//    new ReceiveWeather().execute();
+    
     testFood();
 
     getPictures();
@@ -237,7 +242,6 @@ public class ShowFoodActivity extends AppCompatActivity {
       e.printStackTrace();
     }
   }
-
 
 
   // display the list by global adapter
